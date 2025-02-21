@@ -23,11 +23,8 @@
 				<div class="h-fit w-full">
 					<h2 class="py-4 text-2xl font-[600] text-blue-300">Personal Information</h2>
 					<p class="w-3/4 text-gray-200">
-						My name is Hayden Hargreaves, and I am a software engineering student at <span
-							class="text-blue-300"
-						>
-							Embry Riddle Aeronautical University.</span
-						>
+						My name is Hayden Hargreaves, and I am a software engineering student at
+						<Link href="https://prescott.erau.edu" text="Embry Riddle Aeronautical University." />
 						I am also pursing a minor in Cyber Security. I am a freshmen who intends to graduate in Spring,
 						2028. I have a passion for building things and seeing my ideas come to life.
 					</p>
