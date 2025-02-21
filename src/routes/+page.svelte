@@ -8,7 +8,9 @@
 	<div class="flex flex h-fit w-full">
 		<div class="flex size-full justify-end">
 			<div class="my-16 w-3/4">
-				<h1 class="p-2 text-6xl font-[600] text-blue-300">Building things that matter.</h1>
+				<h1 class="p-2 font-mono text-6xl font-[900] text-blue-300">
+					Building things that matter.
+				</h1>
 				<p class="my-5 p-2 text-gray-200 italic">
 					I am a <span class="text-blue-300">software engineering student</span> at Embry Riddle
 					Aeronautical University, Prescott. I am interested in
