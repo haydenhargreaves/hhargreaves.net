@@ -136,7 +136,54 @@
 
 			<!-- Right Column -->
 			<div class="h-full w-1/3">
-				<div class="h-24 w-full border-1 border-red-500"></div>
+				<div class="w-full">
+					<!-- Education Section -->
+					<h2 class="py-2 text-xl font-semibold text-blue-300">EDUCATION</h2>
+					<div class="mb-4">
+						<h3 class="text-sm font-semibold text-gray-200">
+							Embry Riddle Aeronautical University - 2028
+						</h3>
+						<p class="py text-xs text-gray-200">
+							Bachelor of Science in Software Engineering with minor in Cyber Intelligence and
+							Security (4.00 GPA)
+						</p>
+					</div>
+					<div class="my-4">
+						<h3 class="text-sm font-semibold text-gray-200">West-MEC Central Campus - 2024</h3>
+						<p class="py text-xs text-gray-200">Coding &amp; Programming (4.00 GPA)</p>
+					</div>
+					<div class="my-4">
+						<h3 class="text-sm font-semibold text-gray-200">Paradise Honors High School - 2024</h3>
+						<p class="py text-xs text-gray-200">Honors Student, 13 out of 213 (4.51 WGPA)</p>
+					</div>
+
+					<!-- Contact Info Section -->
+					<h2 class="mt-14 py-2 text-xl font-semibold text-blue-300">CONTACTS</h2>
+					<div class="mb-4">
+						<h3 class="text-sm font-semibold text-gray-200">Email</h3>
+						<p class="py text-xs text-gray-200">hhargreaves2006@gmail.com</p>
+					</div>
+					<div class="my-4">
+						<h3 class="text-sm font-semibold text-gray-200">Phone</h3>
+						<p class="py text-xs text-gray-200">(623) 237 - 0838</p>
+					</div>
+					<div class="my-4">
+						<h3 class="text-sm font-semibold text-gray-200">Location</h3>
+						<p class="py text-xs text-gray-200">Prescott, AZ</p>
+					</div>
+					<div class="my-4">
+						<h3 class="text-sm font-semibold text-gray-200">LinkedIn</h3>
+						<p class="py text-xs text-gray-200">Hayden Hargreaves</p>
+					</div>
+					<div class="my-4">
+						<h3 class="text-sm font-semibold text-gray-200">X</h3>
+						<p class="py text-xs text-gray-200">@azpect_3120</p>
+					</div>
+					<div class="my-4">
+						<h3 class="text-sm font-semibold text-gray-200">GitHub</h3>
+						<p class="py text-xs text-gray-200">Azpect3120</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
