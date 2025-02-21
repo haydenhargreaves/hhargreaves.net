@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Link from '../../components/link.svelte';
 </script>
 
 <main class="flex h-fit flex-col items-center">
@@ -29,16 +30,17 @@
 						>
 						I am also pursing a minor in Cyber Security. I am a freshmen who intends to graduate in Spring,
 						2028. I have a passion for building things and seeing my ideas come to life.
-						<br />
-						<br />
-						In my free time, when I am not coding, I like to workout, I play airsoft, I love mountain
-						biking, and I play video games when I need to relax. I have been playing airsoft for nearly
-						two years and have loved it from day one! I own countless airsoft guns which include an
+					</p>
+					<p class="my-4 w-3/4 text-gray-200">
+						In my free time, when I am not coding, I like to workout, I play airsoft, I love
+						mountain biking, and I play video games when I need to relax. I have been playing
+						airsoft for nearly two years and have loved it from day one! I own countless airsoft
+						guns which include an
 						<span class="text-blue-300">Elite Force H&amp;K 416 A5</span>, an
 						<span class="text-blue-300"> Elite Force 1911 TAC</span>,
 						<span class="text-blue-300">JAG Arms Scattergun Super CQB</span>, and many more.
-						<br />
-						<br />
+					</p>
+					<p class="my-4 w-3/4 text-gray-200">
 						Back at home, I have a dog named <span class="text-blue-300">Penny</span> who is a mini golden-doodle.
 						She was named after the character Penny from the show "The Big Bang Theory". She is a very
 						energetic dog who loves to play and run around. She will be five years old this July!
@@ -71,12 +73,12 @@
 						have settled on <span class="text-blue-300">NixOS</span> as my daily driver. During this
 						journey I developed a "need for speed" and this lead to me to
 						<span class="text-blue-300">Neovim</span>. Inspired by
-						<a
+						<Link
+							text="The Primeagen"
 							href="https://x.com/ThePrimeagen?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-							target="_blank"
-							class="transition-color underline duration-150 hover:text-blue-300">The Primeagen</a
-						>, I have developed a love for developer toolchain development and have been building
-						many small Neovim plugins to help me in my day-to-day life as a developer.
+						/>
+						, I have developed a love for developer toolchain development and have been building many
+						small Neovim plugins to help me in my day-to-day life as a developer.
 					</p>
 					<p class="w-3/4 text-gray-200">
 						I have been employed as a Staff Accountant at
@@ -84,11 +86,10 @@
 						following a hack at the previous data hosting company, I was tasked with developing a
 						new data hosting solution. I developed a custom solution using Go and host it on an on
 						site Linux server. Implementing a strong partial and complete backup system and
-						<a
+						<Link
+							text="RAID 10"
 							href="https://www.techtarget.com/searchstorage/definition/RAID-10-redundant-array-of-independent-disks"
-							target="_blank"
-							class="transition-color underline duration-150 hover:text-blue-300">RAID 10</a
-						>
+						/>
 						storage, I was able to ensure that the data is safe and secure. This solution has been in
 						use since 2024 and has been a great success.
 					</p>
@@ -116,11 +117,7 @@
 					<p class="my-4 w-3/4 text-gray-200">
 						My most recent endeavor is a research project sponsored by Embry Riddle. I am working
 						with
-						<a
-							href="https://faculty.erau.edu/Seth.McNeill"
-							class="transition-color underline duration-150 hover:text-blue-300"
-							target="_blank">Dr. McNeill</a
-						>
+						<Link href="https://faculty.erau.edu/Seth.McNeill" text="Dr. Seth McNeill" />
 						to create an <span class="text-blue-300">Acoustic Drone Detection Sensor Network</span>.
 						Using just sound, we are able to detect drones with a nearly 95% accuracy rate. My
 						portion of this project is the network infrastructure. I have developed an
