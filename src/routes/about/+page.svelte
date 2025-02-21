@@ -60,7 +60,7 @@
 						I started programming in high school where I learned web development using HTML, CSS,
 						and some basic JavaScript. From there, I started to learn software development basics
 						using <span class="text-blue-300">Java</span>. Since then, I have learned to love
-						<span class="text-blue-300">Go</span> and have dipped my feet into the water of countless
+						<Link href="https://go.dev" text="Go" /> and have dipped my feet into the water of countless
 						programming languages.
 					</p>
 					<p class="my-4 w-3/4 text-gray-200">
