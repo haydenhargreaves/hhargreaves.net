@@ -1,0 +1,125 @@
+[
+  {
+    "title": "Cellular Automation Simulation",
+    "description": "A cellular automation simulation using user defined rule sets. Currently, this is simply, a Conway's Game of Life simulation.",
+    "date": "February, 2025 - Current",
+    "stack": [
+      "Javascript",
+      "SvelteKit"
+    ],
+    "image": "projects/cellularAutomation.png",
+    "imageAlt": "Image of my cellular automation game",
+    "link": "https://github.com/Azpect3120/CellularAutomation"
+  },
+  {
+    "title": "TCP Server Notification System",
+    "description": "Server/Client TCP notification system for communication between a server and many clients. A custom event loop and protocol was created to handle the communication between the server and clients.",
+    "date": "February, 2025 - Current",
+    "stack": [
+      "Go"
+    ],
+    "image": null,
+    "imageAlt": null,
+    "link": "https://github.com/Azpect3120/TCPNotificationManager"
+  },
+  {
+    "title": "Python Stock Market Analysis",
+    "description": "A simple stock market analysis tool that uses a backdoor API to get stock data and analyze it, collecting basic information of historical data. This project was built as a homework assignment for my SE320 (Software Construction) class.",
+    "date": "February, 2025",
+    "stack": [
+      "Python"
+    ],
+    "image": "projects/pythonStockMarketAnalysis.png",
+    "imageAlt": "Image of the python application and its result",
+    "link": "https://github.com/Azpect3120/PythonStockAnalysis"
+  },
+  {
+    "title": "Acoustic Drone Detection Sensor Network",
+    "description": "This project aims to develop a low-cost, acoustic drone detection system as a supplementary security measure for locations like borders and airports. The system will use small microphones and microcontrollers to detect drone sounds, even amidst background noise, at distances of at least 50 feet. This data will be collected by a network of weather-resistant, solar-powered sensors, transmitted wirelessly via LoRa and WiFi, and securely reported in real-time to Amazon Web Services for monitoring. This project is a research project from Embry-Riddle Aeronautical University.",
+    "date": "December, 2024 - Current",
+    "stack": [
+      "C++",
+      "Python"
+    ],
+    "image": "projects/acousticDroneDetection.png",
+    "imageAlt": "Initial test results of the sensors",
+    "link": null
+  },
+  {
+    "title": "Stock Market Trading Bot",
+    "description": "A stock market trading bot that uses a variety of technical indicators to rate a stock's potential for the coming day. The bot will produce an output that can be used to select stocks to trade in the next trading day. Note: I AM NOT RESPONSIBLE FOR ANY LOST MONEY AS A RESULT OF USING THIS BOT!",
+    "date": "December, 2024",
+    "stack": [
+      "Go"
+    ],
+    "image": "projects/tradingBot.jpg",
+    "imageAlt": "Image of the stock market. Stock image.",
+    "link": "https://github.com/Azpect3120/TradingBot"
+  },
+  {
+    "title": "Web Database Connection Tool",
+    "description": "This is a simple web database viewer that allows you to view and edit a database in a web browser. Connections can be made to the database using the convenient connection creation interface, and later modified and deleted with the manage connections interface.",
+    "date": "September, 2024",
+    "stack": [
+      "Go",
+      "HTML",
+      "HTMX",
+      "TailwindCSS"
+    ],
+    "image": "projects/webDatabaseViewer.png",
+    "imageAlt": "Image of the web database viewer",
+    "link": "https://github.com/Azpect3120/Web-Database-Viewer"
+  },
+  {
+    "title": "Document Sync Protocol",
+    "description": "A semi-refined protocol for syncing documents between Neovim clients over TCP. A basic server and client implementation is provided in the repository. The protocol is designed to be simple and easy to implement into a Neovim plugin.",
+    "date": "May, 2024",
+    "stack": [
+      "Lua",
+      "Vimscript",
+      "Go"
+    ],
+    "image": null,
+    "imageAlt": null,
+    "link": "https://github.com/Azpect3120/document-sync-protocol"
+  },
+  {
+    "title": "HTMX Class",
+    "description": "I taught a class at West-MEC Central Campus on HTMX, a web technology that allows for dynamic web pages without the need for Javascript. The class was a success and my fellow students learned a lot about the new technology. The idea and format of this class was inspired by The Primeagen.",
+    "date": "April, 2024",
+    "stack": [
+      "HTMX",
+      "HTML",
+      "Javascript"
+    ],
+    "image": "projects/htmxClass.png",
+    "imageAlt": "Image of the application that was built during the class",
+    "link": "https://github.com/Azpect3120/htmx-class"
+  },
+  {
+    "title": "Gomon.nvim",
+    "description": "A simple hot reloading plugin for neovim built for Go development. Have you ever experienced the need to constantly restart and rerun a large Golang project? Are you not interested in using Docker? Does the repetitive setup of Air drain your sanity? Are you tired of launching a terminal and slowing down your workflow just to copy and paste the same command repeatedly?",
+    "date": "February, 2024",
+    "stack": [
+      "Lua",
+      "Vimscript"
+    ],
+    "image": "projects/gomon.png",
+    "imageAlt": "Image of Gomon.nvim github repository",
+    "link": "https://github.com/Azpect3120/gomon.nvim"
+  },
+  {
+    "title": "Vendor Management System",
+    "description": "A fully fleshed out vendor management system that allows for the management of vendors. This project was built for the FBLA Coding and Programming 2024 competition, and was later adopted by West-MEC Central Campus. The application includes an AI chatbot which can respond to queries about the data, user account management and creation with roles, 2-factor authentication, secure data storage, 100% responsive web design on all platforms, session management to ensure secure and safe data transfer, and token requirements for user creation. Unfortunately, this project is not open source and has been taken down due to data privacy concerns. This project qualified for the National FBLA Leadership Conference in 2024!",
+    "date": "October, 2023 - April, 2024",
+    "stack": [
+      "Go",
+      "HTML",
+      "HTMX",
+      "TailwindCSS"
+    ],
+    "image": null,
+    "imageAlt": null,
+    "link": null
+  }
+]
