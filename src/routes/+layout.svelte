@@ -5,6 +5,8 @@
 	let { children } = $props();
 </script>
 
-<Navbar />
-{@render children()}
-<Footer />
+<div class="bg-[#1b1b1c]">
+	<Navbar />
+	{@render children()}
+	<Footer />
+</div>
