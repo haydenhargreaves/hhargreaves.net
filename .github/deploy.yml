@@ -1,0 +1,35 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: azpect3120/hhargreaves.dev:latest
+
+      - name: Deploy to server via SSH
+        uses: appleboy/ghaction-ssh@master
+        with:
+          host: ${{ secrets.SERVER_IP }} # Server IP address
+          username: ${{ secrets.SERVER_USERNAME }} # Server username
+          key: ${{ secrets.SERVER_PRIVATE_KEY }} # Server private key (base64 encoded)
+          port: ${{ secrets.SERVER_PORT || 22 }} # SSH port (default 22)
+          script: |
+            docker pull azpect3120/hhargreaves.dev:latest # Pull the latest image
+            docker stop hhargreaves.dev || true # Stop the old container (ignore if it doesn't exist)
+            docker rm hhargreaves.dev || true # Remove the old container (ignore if it doesn't exist)
+            docker run -d -p 3000:3000 --name hhargreaves.dev azpect3120/hhargreaves.dev:latest # Run the new container
