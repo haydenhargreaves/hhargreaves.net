@@ -22,11 +22,11 @@ jobs:
           tags: azpect3120/hhargreaves.dev:latest
 
       - name: Deploy to server via SSH
-        uses: appleboy/ghaction-ssh@master
+        uses: appleboy/ssh-action@v1.2.1
         with:
           host: ${{ secrets.SERVER_IP }} # Server IP address
           username: ${{ secrets.SERVER_USERNAME }} # Server username
-          key: ${{ secrets.SERVER_PRIVATE_KEY }} # Server private key (base64 encoded)
+          password: ${{ secrets.SERVER_PASSWORD }} # Server password
           port: ${{ secrets.SERVER_PORT || 22 }} # SSH port (default 22)
           script: |
             docker pull azpect3120/hhargreaves.dev:latest # Pull the latest image
