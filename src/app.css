@@ -3,6 +3,71 @@
 
 /* This is very painful. There must be a better way. */
 @layer base {
+
+  div.blog-wrapper h1,
+  div.blog-wrapper h2,
+  div.blog-wrapper h3,
+  div.blog-wrapper h4,
+  div.blog-wrapper h5,
+  div.blog-wrapper h6,
+  div.blog-wrapper p,
+  div.blog-wrapper ul,
+  div.blog-wrapper ol {
+    @apply text-gray-300;
+  }
+
+  div.blog-wrapper ul {
+    list-style-type: disc !important;
+    @apply bg-red-500;
+  }
+
+  div.blog-wrapper.prose ul {
+    list-style-type: disc;
+    @apply bg-red-500;
+  }
+
+  div.blog-wrapper ul {
+    @apply list-decimal;
+  }
+
+  div.blog-wrapper h1 {
+    @apply text-4xl font-bold;
+  }
+
+  div.blog-wrapper h2 {
+    @apply text-3xl font-bold;
+  }
+
+  div.blog-wrapper h3 {
+    @apply text-2xl font-bold;
+  }
+
+  div.blog-wrapper h4 {
+    @apply text-xl font-bold;
+  }
+
+  div.blog-wrapper h5 {
+    @apply text-lg font-bold;
+  }
+
+  /* Same size as h5, but not bold */
+  div.blog-wrapper h6 {
+    @apply text-lg;
+  }
+
+  div.blog-wrapper p {
+    @apply text-sm;
+  }
+
+  div.blog-wrapper a {
+    @apply underline hover:text-blue-300;
+  }
+
+  div.blog-wrapper p code {
+    @apply bg-[#191724] p-1;
+  }
+
+
   pre {
     background-color: #191724;
     padding: 0.5rem 2rem;

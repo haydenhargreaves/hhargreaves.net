@@ -1,6 +1,69 @@
-# This is a blog post
+# H1 Tag
+## H2 Tag
+### H3 Tag
+#### H4 Tag
+##### H5 Tag
+###### H6 Tag
+
+*This text is italic*
+**This text is bold**
+***This text is bold and italic***
+
+[This is an anchor](https://www.youtube.com), but this is not.
 
 This is a blog post about something. It's really interesting. I hope you enjoy it.
+
+# Markdown Quirks and Edge Cases
+
+## Emphasis and Strong Emphasis
+
+*This text is emphasized.*
+_This text is also emphasized._
+
+**This text is strong emphasis.**
+__This text is also strong emphasis.__
+
+* Item 1
+* Item 2
+* Item 3
+
++ Another Item 1
++ Another Item 2
+
+1. Yet Another Item 1
+2. Yet Another Item 2
+
+***This text is both emphasized and strong!***
+___This text is also both emphasized and strong!___
+
+## Strikethrough
+
+~~This text is strikethrough.~~
+
+## Links
+
+[Link to Google](https://www.google.com)
+[Link with title](https://www.google.com "Google's Homepage")
+[Relative link](/some/page)
+[Link with spaces in URL](https://www.google.com/search?q=hello%20world)
+<https://www.google.com>  (Auto-linked URL)
+
+## Images
+
+![Alt text for image](https://www.example.com/image.jpg)
+![Alt text with title](https://www.example.com/image.jpg "Image title")
+![Image with spaces in URL](https://www.example.com/image%20with%20spaces.png)  (URL encoded spaces)
+
+## Code
+
+`Inline code`
+```javascript
+// Code block with language specified
+function myFunction() {
+  console.log("Hello, world!");
+}
+
+```
 
 My favorite color is red.
 
