@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Link from '../../components/link.svelte';
 	import type { PageProps } from './$types';
 	let { data }: PageProps = $props();
 
@@ -20,7 +21,15 @@
 		</p>
 	</div>
 	<!-- Posts List -->
-	<div class="">
+	<div class="w-2/3">
+		{#if data.posts.length === 0}
+			<h2 class="py-8 text-6xl font-semibold text-gray-300 italic opacity-30">404</h2>
+			<p class="w-2/3 text-gray-300">
+				Uh oh! There are no posts to show. Check back later for more content! If you think this is a
+				mistake or have any interesting ideas, please let me know by sending me an
+				<Link href="mailto:hhargreaves2006@gmail.com" text="email" />.
+			</p>
+		{/if}
 		{#each data.posts as post}
 			<div class="group my-5 rounded-sm border-l-4 border-blue-300 px-4">
 				<h2 class="text-xl">
