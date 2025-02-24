@@ -4,6 +4,166 @@ This is a blog post about something. It's really interesting. I hope you enjoy i
 
 My favorite color is red.
 
+```cpp
+// C++
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+#define string "HELLO"
+
+int main() {
+    // Templates
+    template <typename T>
+    T max(T a, T b) {
+        return (a > b) ? a : b;
+    }
+
+    // Lambda expressions
+    auto lambda = [](int x) { return x * x; };
+
+    // Smart pointers
+    std::unique_ptr<int> ptr = std::make_unique<int>(42);
+
+    // Raw strings (C++11)
+    std::string raw_string = R"(This is a raw string.\nIt can contain backslashes and quotes: " ' \ )";
+
+    // Variadic templates (C++11)
+    template<typename... Args>
+    void print_all(Args... args) {
+        (std::cout << ... << args) << std::endl;
+    }
+
+    // constexpr (C++11)
+    constexpr int factorial(int n) {
+      return (n <= 1) ? 1 : (n * factorial(n-1));
+    }
+
+    // Namespaces
+    namespace my_namespace {
+        void my_function() {
+            std::cout << "Hello from my_namespace!" << std::endl;
+        }
+    }
+
+    // Operator overloading
+    class MyClass {
+    public:
+        int value;
+        MyClass(int v) : value(v) {}
+        MyClass operator+(const MyClass& other) const {
+            return MyClass(value + other.value);
+        }
+    };
+
+    // Comments (including tricky ones)
+    // This is a single-line comment.
+    /*
+    This is a
+    multi-line comment.
+    */
+    // /* Nested comment */  <- tricky!
+
+    // Unicode characters
+    std::string unicode_string = "你好世界"; // Hello, world in Chinese
+
+    return 0;
+}
+```
+
+```go
+// Go
+
+package main
+
+import "fmt"
+
+func main() {
+    // Functions with multiple return values
+    func add_and_subtract(a, b int) (int, int) {
+        return a + b, a - b
+    }
+
+    // Structs
+    type Person struct {
+        Name string
+        Age  int
+    }
+
+    // Methods
+    func (p Person) Greet() {
+        fmt.Println("Hello, my name is", p.Name)
+    }
+
+    // Interfaces
+    type Greeter interface {
+        Greet()
+    }
+
+    // Goroutines and channels
+    go func() {
+        fmt.Println("This is a goroutine")
+    }()
+
+    ch := make(chan int)
+    go func() {
+        ch <- 42
+    }()
+    fmt.Println(<-ch)
+
+
+    // Slices and arrays
+    numbers := []int{1, 2, 3, 4, 5}
+    slice := numbers[1:3]
+
+    // Maps
+    ages := map[string]int{
+        "Alice": 30,
+        "Bob":   25,
+    }
+
+    // Comments (including tricky ones)
+    // This is a single-line comment.
+    /*
+    This is a
+    multi-line comment.
+    */
+    // /* Nested comment */  <- tricky!
+
+    // Unicode characters
+    unicodeString := "你好世界"
+
+    // Type switch
+    var i interface{} = 123
+    switch v := i.(type) {
+    case int:
+        fmt.Println("Integer:", v)
+    default:
+        fmt.Println("Other type")
+    }
+
+    // Defer statements
+    defer fmt.Println("This will be printed last")
+
+    // Error handling
+    result, err := divide(10, 0)
+    if err != nil {
+        fmt.Println("Error:", err)
+    } else {
+        fmt.Println("Result:", result)
+    }
+
+}
+
+func divide(a, b int) (int, error) {
+    if b == 0 {
+        return 0, fmt.Errorf("division by zero")
+    }
+    return a / b, nil
+}
+```
+
 ```js
 // JavaScript
 

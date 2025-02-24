@@ -5,17 +5,11 @@
 @layer base {
   pre {
     background-color: #191724;
-    /* background-color: red; */
-    /* Or any color you want */
     padding: 0.5rem 2rem;
     margin-inline: 2%;
-    /* Adjust padding as needed */
     border-radius: 10px;
-    /* Optional: Add rounded corners */
     overflow-x: auto;
-    /* Handle horizontal overflow if code is wider */
     white-space: pre-wrap;
-    /* Allows code to wrap within the pre element*/
   }
 
   code.hljs {
@@ -38,7 +32,7 @@
   }
 
   .hljs-keyword {
-    color: #31748f;
+    color: #3e8fb0;
   }
 
   .hljs-params,
@@ -64,7 +58,7 @@
   .hljs-title,
   code.language-python .hljs-built_in,
   code.language-go .hljs-built_in {
-    color: #ebbcba;
+    color: #ea9a97;
   }
 
   .hljs-property,
