@@ -18,9 +18,9 @@ export const load = async ({ url }: RequestEvent) => {
   const cleanPath = blogPath.replaceAll("%20", " ");
 
   // Read the file and get the data
-  let data: string = "";
+  let content: string = "";
   try {
-    data = readFileSync(cleanPath, 'utf-8');
+    content = readFileSync(cleanPath, 'utf-8');
   } catch {
     // Catch and return any errors
     return {
@@ -33,7 +33,19 @@ export const load = async ({ url }: RequestEvent) => {
   }
 
   // Date: 2025-02-24 -> date object
-  const date: Date = new Date(data.split("\n")[0].split(":")[1].trim());
+  // Desc: ... -> description
+  let lines: string[] = content.split("\n");
+  let date: Date = new Date();
+  let description: string = "";
+
+  // Ensure the meta data is provided
+  if (lines[0].slice(0, 5) == "Date:" || lines[1].slice(0, 5) == "Desc:") {
+    date = new Date(lines[0].split("Date:")[1].trim());
+    description = lines[1].split("Desc:")[1].trim();
+
+    // Remove meta data from final content
+    lines = lines.slice(2);
+  }
 
   // Create a marked object that can parse the data
   const marked = new Marked(
@@ -50,8 +62,9 @@ export const load = async ({ url }: RequestEvent) => {
   return {
     post: {
       // Convert the markdown to HTML. Slice off the first line which is the date of publication.
+      // The second line is the description of the post.
       // Any other meta data that needs to be cut can be removed by increasing the '1' in the slice.
-      content: marked.parse(data.split("\n").slice(1).join("\n")),
+      content: marked.parse(lines.join("\n")),
       date: date,
       error: null,
     }

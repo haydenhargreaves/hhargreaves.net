@@ -1,8 +1,6 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
 	let { data }: PageProps = $props();
-
-	console.log(`Post's date: ${data.post.date.toUTCString()}`);
 </script>
 
 {#if data.post.error}

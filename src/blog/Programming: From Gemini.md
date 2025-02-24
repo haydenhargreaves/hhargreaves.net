@@ -1,4 +1,5 @@
 Date: 2025-02-24
+Desc: A silly article from Gemini.
 # Diving Deep into the World of Programming: A Journey of Logic and Creativity
 
 Programming, in its essence, is the art and science of communicating with computers. It's about crafting a precise sequence of instructions, a "program," that dictates every step a machine should take.  From the sleek applications on your smartphone to the intricate systems that manage global infrastructure, programming is the invisible hand shaping the technological world we inhabit.  It's more than just lines of code; it's the engine of innovation.

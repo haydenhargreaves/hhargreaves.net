@@ -1,4 +1,5 @@
 Date: 2025-02-24
+Desc: A comparison of performance, extensibility, modal editing, community, and popularity.
 # Neovim: A Robust Alternative to Visual Studio Code
 
 ###### Author: Hayden Hargreaves
