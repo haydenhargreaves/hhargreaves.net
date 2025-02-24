@@ -1,7 +1,3 @@
-<script>
-	console.log('navbar.svelte');
-</script>
-
 <nav class="flex border-b-1 border-gray-700 py-6">
 	<div class="flex items-end">
 		<h3 class="ml-4 px-2 text-2xl font-[600] text-gray-200">Hayden Hargreaves</h3>
@@ -14,6 +10,9 @@
 		</a>
 		<a href="/about" class="transition-all duration-150 hover:text-blue-300">
 			<p class="px-3">About</p>
+		</a>
+		<a href="/blog" class="transition-all duration-150 hover:text-blue-300">
+			<p class="px-3">Blog</p>
 		</a>
 		<a href="https://github.com/Azpect3120" target="_blank" class="">
 			<svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="mx-4 h-auto w-6">

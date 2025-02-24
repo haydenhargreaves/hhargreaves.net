@@ -1,1 +1,79 @@
 @import 'tailwindcss';
+
+
+/* This is very painful. There must be a better way. */
+@layer base {
+  pre {
+    background-color: #191724;
+    /* background-color: red; */
+    /* Or any color you want */
+    padding: 0.5rem 2rem;
+    margin-inline: 2%;
+    /* Adjust padding as needed */
+    border-radius: 10px;
+    /* Optional: Add rounded corners */
+    overflow-x: auto;
+    /* Handle horizontal overflow if code is wider */
+    white-space: pre-wrap;
+    /* Allows code to wrap within the pre element*/
+  }
+
+  code.hljs {
+    color: #e0def4;
+  }
+
+  .hljs-string,
+  .hljs-number,
+  .hljs-meta {
+    color: #f6c177;
+  }
+
+  .hljs-punctuation,
+  .hljs-operator {
+    color: #908caa;
+  }
+
+  .hljs-comment {
+    color: #6e6a86;
+  }
+
+  .hljs-keyword {
+    color: #31748f;
+  }
+
+  .hljs-params,
+  .hljs-method,
+  .hljs-methods,
+  .hljs-regexp,
+  code.language-python .hljs-meta {
+    color: #c4a7e7;
+  }
+
+  .hljs-variable,
+  .hljs-attr {
+    color: #e0def4;
+  }
+
+  .language_ {
+    color: #eb6f92;
+  }
+
+  .function_,
+  .hljs-literal,
+  .hljs-built_in,
+  .hljs-title,
+  code.language-python .hljs-built_in,
+  code.language-go .hljs-built_in {
+    color: #ebbcba;
+  }
+
+  .hljs-property,
+  .class_,
+  .hljs-type,
+  .hljs-tag,
+  .hljs-selector-tag,
+  .hljs-selector-class,
+  code.language-ts .hljs-built_in {
+    color: #9ccfd8;
+  }
+}
