@@ -19,30 +19,21 @@ export const load = async ({ url }: RequestEvent) => {
   // Read the file and get the data
   const data = readFileSync(blogPath, 'utf-8');
 
-  // marked.use({
-  //   gfm: true,
-  //   breaks: true,
-  //
-  // });
   const marked = new Marked(
     markedHighlight({
       emptyLangClass: 'hljs',
       langPrefix: 'hljs language-',
-      highlight(code, lang, info) {
-        console.log("INFO: ", code);
+      highlight(code, lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
         return hljs.highlight(code, { language }).value;
       }
     })
   );
 
-  // Convert the markdown to HTML
-  const html = marked.parse(data);
-  console.log(html);
-
   return {
     post: {
-      content: html,
+      // Convert the markdown to HTML
+      content: marked.parse(data),
     }
   };
 };
