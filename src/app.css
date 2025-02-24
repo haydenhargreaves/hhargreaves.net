@@ -17,17 +17,11 @@
   }
 
   div.blog-wrapper ul {
-    list-style-type: disc !important;
-    @apply bg-red-500;
+    @apply list-disc list-inside;
   }
 
-  div.blog-wrapper.prose ul {
-    list-style-type: disc;
-    @apply bg-red-500;
-  }
-
-  div.blog-wrapper ul {
-    @apply list-decimal;
+  div.blog-wrapper ol {
+    @apply list-decimal list-inside;
   }
 
   div.blog-wrapper h1 {
