@@ -27,21 +27,22 @@ export const load = async ({ url }: RequestEvent) => {
       post: {
         content: "",
         date: new Date(),
-        error: "Sorry, this post could not be found."
+        error: "Sorry, this post could not be found. If you think this is an error, please contact me!"
       }
     };
   }
 
   // Date: 2025-02-24 -> date object
   // Desc: ... -> description
+  // We are not using the description for now, so it can be ignored.
   let lines: string[] = content.split("\n");
   let date: Date = new Date();
-  let description: string = "";
+  // let description: string = "";
 
   // Ensure the meta data is provided
   if (lines[0].slice(0, 5) == "Date:" || lines[1].slice(0, 5) == "Desc:") {
     date = new Date(lines[0].split("Date:")[1].trim());
-    description = lines[1].split("Desc:")[1].trim();
+    // description = lines[1].split("Desc:")[1].trim();
 
     // Remove meta data from final content
     lines = lines.slice(2);

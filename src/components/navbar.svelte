@@ -1,4 +1,4 @@
-<nav class="flex border-b-1 border-gray-700 py-6">
+<nav class="absolute top-0 flex w-full border-b-1 border-gray-700 bg-[#1b1b1c] py-6">
 	<div class="flex items-end">
 		<h3 class="ml-4 px-2 text-2xl font-[600] text-gray-200">Hayden Hargreaves</h3>
 		<p class="text-md text-gray-200 italic">Software Engineer</p>
