@@ -11,7 +11,7 @@
 		</p>
 	</main>
 {:else}
-	<div class="blog-wrapper prose mx-[7.5%] my-[3%]">
+	<div class="blog-wrapper prose">
 		{@html data.post.content}
 	</div>
 {/if}

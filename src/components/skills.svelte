@@ -162,5 +162,4 @@
 			<h3 class="text-sm font-semibold text-gray-200">{tool}</h3>
 		</div>
 	{/each}
-	<!-- <h3 class="text-sm font-semibold text-gray-200">{tools.join(' - ')}</h3> -->
 </div>
