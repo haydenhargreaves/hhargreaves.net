@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'fs';
 
-// Location of the blogs, all md files should be placed here
-const blog_path = process.cwd().concat('/src', '/blog');
+// Location of the posts, all md files should be placed here
+const journal_path = process.cwd().concat('/src', '/journal');
 
 /**
  * The post object for use in the page.
@@ -21,9 +21,9 @@ type Post = {
 export const load = async () => {
   const posts: Post[] = [];
 
-  // Read all the files names in the blog directory.
-  readdirSync(blog_path).forEach(file => {
-    const content: string = readFileSync(blog_path.concat('/', file), 'utf-8');
+  // Read all the files names in the journal directory.
+  readdirSync(journal_path).forEach(file => {
+    const content: string = readFileSync(journal_path.concat('/', file), 'utf-8');
 
     // Date: 2025-02-24 -> date object
     // Desc: ... -> description
@@ -40,7 +40,7 @@ export const load = async () => {
     // Create the post
     const post: Post = {
       title: file.split('.')[0],
-      path: '/blog'.concat('/', file.split('.')[0]),
+      path: '/journal'.concat('/', file.split('.')[0]),
       date,
       description
     }

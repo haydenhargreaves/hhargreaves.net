@@ -7,7 +7,7 @@
 {#if data.post.error}
 	<NotFound message={data.post.error} />
 {:else}
-	<div class="blog-wrapper prose">
+	<div class="journal-wrapper prose">
 		{@html data.post.content}
 	</div>
 {/if}

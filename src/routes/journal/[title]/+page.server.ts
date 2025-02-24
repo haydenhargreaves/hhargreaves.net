@@ -8,14 +8,14 @@ import hljs from 'highlight.js';
 const cwd = process.cwd();
 
 /**
- * Load the blog post from the file system when the page is requested.
+ * Load the journal post from the file system when the page is requested.
  * @param {RequestEvent} event
  */
 export const load = async ({ url }: RequestEvent) => {
   // Create the path
   // ./src/[url].md
-  const blogPath = cwd.concat("/src", url.pathname, ".md");
-  const cleanPath = blogPath.replaceAll("%20", " ");
+  const journalPath = cwd.concat("/src", url.pathname, ".md");
+  const cleanPath = journalPath.replaceAll("%20", " ");
 
   // Read the file and get the data
   let content: string = "";

@@ -18,7 +18,7 @@ Desc: Testing the markdown parser with various elements and edge cases.
 
 [This is an anchor](https://www.youtube.com), but this is not.
 
-This is a blog post about something. It's really interesting. I hope you enjoy it.
+This is a journal post about something. It's really interesting. I hope you enjoy it.
 
 # Markdown Quirks and Edge Cases
 

@@ -11,8 +11,8 @@
 		<a href="/about" class="transition-all duration-150 hover:text-blue-300">
 			<p class="px-3">About</p>
 		</a>
-		<a href="/blog" class="transition-all duration-150 hover:text-blue-300">
-			<p class="px-3">Blog</p>
+		<a href="/journal" class="transition-all duration-150 hover:text-blue-300">
+			<p class="px-3">Journal</p>
 		</a>
 		<a href="https://github.com/Azpect3120" target="_blank" class="">
 			<svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="mx-4 h-auto w-6">

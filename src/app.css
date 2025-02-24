@@ -4,77 +4,77 @@
 /* This is very painful. There must be a better way. */
 @layer base {
 
-  div.blog-wrapper h1,
-  div.blog-wrapper h2,
-  div.blog-wrapper h3,
-  div.blog-wrapper h4,
-  div.blog-wrapper h5,
-  div.blog-wrapper h6 {
+  div.journal-wrapper h1,
+  div.journal-wrapper h2,
+  div.journal-wrapper h3,
+  div.journal-wrapper h4,
+  div.journal-wrapper h5,
+  div.journal-wrapper h6 {
     @apply text-gray-300 px-4;
   }
 
-  div.blog-wrapper p,
-  div.blog-wrapper ul,
-  div.blog-wrapper ol,
-  div.blog-wrapper table {
+  div.journal-wrapper p,
+  div.journal-wrapper ul,
+  div.journal-wrapper ol,
+  div.journal-wrapper table {
     @apply text-gray-400 text-sm px-4 py-2;
   }
 
-  div.blog-wrapper table {
+  div.journal-wrapper table {
     @apply table-fixed w-full border border-gray-300 border-collapse;
   }
 
-  div.blog-wrapper table th {
+  div.journal-wrapper table th {
     @apply text-blue-300 p-2 text-xl;
   }
 
-  div.blog-wrapper table td {
+  div.journal-wrapper table td {
     @apply border border-gray-300 p-2 text-sm;
   }
 
-  div.blog-wrapper ul {
+  div.journal-wrapper ul {
     @apply list-disc list-outside;
   }
 
-  div.blog-wrapper ol {
+  div.journal-wrapper ol {
     @apply list-decimal list-inside;
   }
 
-  div.blog-wrapper h1 {
+  div.journal-wrapper h1 {
     @apply text-3xl font-bold py-6;
   }
 
-  div.blog-wrapper h2 {
+  div.journal-wrapper h2 {
     @apply text-xl font-bold p-4;
   }
 
-  div.blog-wrapper h3 {
+  div.journal-wrapper h3 {
     @apply text-lg font-bold p-4;
   }
 
-  div.blog-wrapper h4 {
+  div.journal-wrapper h4 {
     @apply text-lg py-2;
   }
 
-  div.blog-wrapper h6 {
+  div.journal-wrapper h6 {
     @apply text-xs text-gray-400;
   }
 
 
-  div.blog-wrapper p {
+  div.journal-wrapper p {
     @apply text-sm;
   }
 
-  div.blog-wrapper blockquote {
+  div.journal-wrapper blockquote {
     @apply border-l-4 border-blue-300 p-4 my-4;
 
   }
 
-  div.blog-wrapper a {
+  div.journal-wrapper a {
     @apply underline hover:text-blue-300;
   }
 
-  div.blog-wrapper p code {
+  div.journal-wrapper p code {
     @apply bg-[#191724] p-1;
   }
 
