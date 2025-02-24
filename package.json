@@ -38,7 +38,6 @@
 	"dependencies": {
 		"@types/node": "^22.13.5",
 		"dompurify": "^3.2.4",
-		"fs": "^0.0.1-security",
 		"highlight.js": "^11.11.1",
 		"marked": "^15.0.7",
 		"marked-highlight": "^2.2.1",
