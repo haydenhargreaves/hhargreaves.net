@@ -9,15 +9,31 @@
   div.blog-wrapper h3,
   div.blog-wrapper h4,
   div.blog-wrapper h5,
-  div.blog-wrapper h6,
+  div.blog-wrapper h6 {
+    @apply text-gray-300 px-4;
+  }
+
   div.blog-wrapper p,
   div.blog-wrapper ul,
-  div.blog-wrapper ol {
-    @apply text-gray-300;
+  div.blog-wrapper ol,
+  div.blog-wrapper table {
+    @apply text-gray-400 text-sm px-4 py-2;
+  }
+
+  div.blog-wrapper table {
+    @apply table-fixed w-full border border-gray-300 border-collapse;
+  }
+
+  div.blog-wrapper table th {
+    @apply text-blue-300 p-2 text-xl;
+  }
+
+  div.blog-wrapper table td {
+    @apply border border-gray-300 p-2 text-sm;
   }
 
   div.blog-wrapper ul {
-    @apply list-disc list-inside;
+    @apply list-disc list-outside;
   }
 
   div.blog-wrapper ol {
@@ -25,32 +41,33 @@
   }
 
   div.blog-wrapper h1 {
-    @apply text-4xl font-bold;
+    @apply text-3xl font-bold py-6;
   }
 
   div.blog-wrapper h2 {
-    @apply text-3xl font-bold;
+    @apply text-xl font-bold p-4;
   }
 
   div.blog-wrapper h3 {
-    @apply text-2xl font-bold;
+    @apply text-lg font-bold p-4;
   }
 
   div.blog-wrapper h4 {
-    @apply text-xl font-bold;
+    @apply text-lg py-2;
   }
 
-  div.blog-wrapper h5 {
-    @apply text-lg font-bold;
-  }
-
-  /* Same size as h5, but not bold */
   div.blog-wrapper h6 {
-    @apply text-lg;
+    @apply text-xs text-gray-400;
   }
+
 
   div.blog-wrapper p {
     @apply text-sm;
+  }
+
+  div.blog-wrapper blockquote {
+    @apply border-l-4 border-blue-300 p-4 my-4;
+
   }
 
   div.blog-wrapper a {
@@ -63,35 +80,30 @@
 
 
   pre {
-    background-color: #191724;
-    padding: 0.5rem 2rem;
-    margin-inline: 2%;
-    border-radius: 10px;
-    overflow-x: auto;
-    white-space: pre-wrap;
+    @apply text-sm bg-[#191724] p-4 my-4 rounded-lg overflow-x-auto whitespace-pre-wrap;
   }
 
   code.hljs {
-    color: #e0def4;
+    @apply text-[#e0def4];
   }
 
   .hljs-string,
   .hljs-number,
   .hljs-meta {
-    color: #f6c177;
+    @apply text-[#f6c177];
   }
 
   .hljs-punctuation,
   .hljs-operator {
-    color: #908caa;
+    @apply text-[#908caa];
   }
 
   .hljs-comment {
-    color: #6e6a86;
+    @apply text-[#6e6a86];
   }
 
   .hljs-keyword {
-    color: #3e8fb0;
+    @apply text-[#3e8fb0];
   }
 
   .hljs-params,
@@ -99,16 +111,16 @@
   .hljs-methods,
   .hljs-regexp,
   code.language-python .hljs-meta {
-    color: #c4a7e7;
+    @apply text-[#c4a7e7];
   }
 
   .hljs-variable,
   .hljs-attr {
-    color: #e0def4;
+    @apply text-[#e0def4];
   }
 
   .language_ {
-    color: #eb6f92;
+    @apply text-[#eb6f92];
   }
 
   .function_,
@@ -117,7 +129,7 @@
   .hljs-title,
   code.language-python .hljs-built_in,
   code.language-go .hljs-built_in {
-    color: #ea9a97;
+    @apply text-[#ea9a97];
   }
 
   .hljs-property,
@@ -127,6 +139,6 @@
   .hljs-selector-tag,
   .hljs-selector-class,
   code.language-ts .hljs-built_in {
-    color: #9ccfd8;
+    @apply text-[#9ccfd8];
   }
 }
