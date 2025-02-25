@@ -32,6 +32,11 @@ export const load = async () => {
     let description: string = "";
 
     // Ensure the meta data is provided
+    if (lines.length < 2) {
+      return {
+        posts,
+      }
+    }
     if (lines[0].slice(0, 5) == "Date:" || lines[1].slice(0, 5) == "Desc:") {
       date = new Date(lines[0].split("Date:")[1].trim());
       description = lines[1].split("Desc:")[1].trim();
@@ -48,6 +53,6 @@ export const load = async () => {
   });
 
   return {
-    posts: posts,
+    posts,
   };
 };
