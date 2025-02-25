@@ -1,4 +1,7 @@
 <script>
+	import { linear } from 'svelte/easing';
+	import { slide } from 'svelte/transition';
+
 	let isMobileMenuOpen = false;
 
 	function toggleMobileMenu() {
@@ -81,6 +84,7 @@
 			class="absolute top-full left-0 z-10 w-full bg-[#1b1b1c] md:hidden"
 			role="navigation"
 			aria-label="Mobile Navigation"
+			transition:slide={{ duration: 200, easing: linear }}
 		>
 			<a
 				href="/"
