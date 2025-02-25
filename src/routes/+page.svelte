@@ -3,11 +3,12 @@
 	import Skills from '../components/skills.svelte';
 </script>
 
-<!-- Introduction Section -->
-<div class="flex flex h-fit w-full">
-	<div class="flex size-full">
-		<div class="">
-			<h1 class="py-2 font-mono text-6xl font-[900] text-blue-300">Building things that matter.</h1>
+<div class="flex h-fit w-full flex-col md:flex-row">
+	<div class="flex-1">
+		<div class="px-4 md:px-0">
+			<h1 class="py-2 font-mono text-4xl font-[900] text-blue-300 md:text-6xl">
+				Building things that matter.
+			</h1>
 			<p class="my-5 py-2 text-gray-200 italic">
 				I am a <span class="text-blue-300">software engineering student</span> at Embry Riddle
 				Aeronautical University, Prescott. I am interested in
@@ -16,21 +17,17 @@
 			</p>
 		</div>
 	</div>
-	<!-- DO NOT DELETE THIS -->
-	<div class="size-full"></div>
+	<div class="hidden flex-1 md:block"></div>
 </div>
 
-<div class="mt-24 flex h-full w-full flex-row">
-	<!-- Left Column -->
-	<div class="flex h-full w-2/3 flex-col">
-		<div class="w-3/4">
+<div class="mt-12 flex w-full flex-col md:mt-24 md:flex-row">
+	<div class="flex-1 md:w-2/3">
+		<div class="w-full px-4 md:w-3/4 md:px-0">
 			<Projects />
 		</div>
 	</div>
-
-	<!-- Right Column -->
-	<div class="flex h-full w-1/3 justify-center">
-		<div class="h-full w-full">
+	<div class="mt-12 flex-1 px-4 md:mt-0 md:w-1/3 md:px-0">
+		<div class="w-full">
 			<Skills />
 		</div>
 	</div>
