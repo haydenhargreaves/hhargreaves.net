@@ -34,15 +34,15 @@
 
 		{#each data.posts as post}
 			<div class="group my-5 rounded-sm border-l-4 border-blue-300 px-4">
-				<h2 class="text-xl">
-					<a href={post.path} class="group relative inline-block no-underline">
+				<a href={post.path} class="group relative inline-block no-underline">
+					<h2 class="text-xl">
 						<span class="relative z-10 text-gray-300">{post.title}</span>
 						<span
-							class="absolute bottom-0 left-0 h-[3px] w-0 bg-blue-300 transition-all duration-300 group-hover:w-full"
+							class="absolute -bottom-1 left-0 h-[3px] w-0 bg-blue-300 transition-all duration-300 group-hover:w-full"
 						></span>
-					</a>
-				</h2>
-				<p class="text-sm text-gray-400">{post.description}</p>
+					</h2>
+					<p class="text-sm text-gray-400">{post.description}</p>
+				</a>
 			</div>
 		{/each}
 	</div>
