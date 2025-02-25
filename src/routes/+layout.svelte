@@ -7,7 +7,7 @@
 
 <div class="bg-[#1b1b1c]">
 	<Navbar />
-	<main class="mx-[7%] my-[9%] h-fit min-h-screen overflow-x-hidden bg-[#1b1b1c] md:mx-[13%]">
+	<main class="mx-[7%] my-[1.5%] h-fit min-h-screen overflow-x-hidden bg-[#1b1b1c] md:mx-[13%]">
 		{@render children()}
 	</main>
 	<Footer />
