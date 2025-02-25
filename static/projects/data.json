@@ -35,7 +35,7 @@
   },
   {
     "title": "Acoustic Drone Detection Sensor Network",
-    "description": "This project aims to develop a low-cost, acoustic drone detection system as a supplementary security measure for locations like borders and airports. The system will use small microphones and microcontrollers to detect drone sounds, even amidst background noise, at distances of at least 50 feet. This data will be collected by a network of weather-resistant, solar-powered sensors, transmitted wirelessly via LoRa and WiFi, and securely reported in real-time to Amazon Web Services for monitoring. This project is a research project from Embry-Riddle Aeronautical University.",
+    "description": "This project aims to develop a low-cost, acoustic drone detection system as a supplementary security measure for locations like borders and airports. The system will use small microphones and microcontrollers to detect drone sounds, even amidst background noise, at distances of at least 50 feet. This data will be collected by a network of weather-resistant, solar-powered sensors, transmitted wirelessly via LoRa and WiFi, and securely reported in real-time to Amazon Web Services for monitoring. This project is a research project funded by Embry-Riddle Aeronautical University and the Undergraute Research Institute (URI).",
     "date": "December, 2024 - Current",
     "stack": [
       "C++",
