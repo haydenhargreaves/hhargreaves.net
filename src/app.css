@@ -66,8 +66,7 @@
   }
 
   div.journal-wrapper blockquote {
-    @apply border-l-4 border-blue-300 p-4 my-4;
-
+    @apply border-l-4 border-blue-300 p-4 my-4 bg-[#252525] rounded-sm;
   }
 
   div.journal-wrapper a {
