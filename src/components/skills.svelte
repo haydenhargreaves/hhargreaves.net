@@ -84,7 +84,7 @@
 		'Nginx',
 		'Gin Web Framework',
 		'SSH',
-		'PostgreSLQ',
+		'PostgreSQL',
 		'Neovim'
 	];
 
