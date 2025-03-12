@@ -10,65 +10,62 @@
 	const skills: SkillData[] = [
 		{
 			title: 'Javascript',
-			description: 'Frontend web development and basic backend development using Node.js.',
+			description: 'Frontend web development',
 			rating: 3
 		},
 		{
 			title: 'Typescript',
-			description: 'Javascript with static typing and additional features.',
+			description: 'Fullstack web development',
 			rating: 3
 		},
 		{
 			title: 'Python',
-			description: 'Dynamic language used for data analysis and machine learning.',
+			description: 'Backend & scripting',
 			rating: 4
 		},
 		{
 			title: 'Go',
-			description: 'All purpose language for backend web development and systems programming.',
+			description: 'Backend & systems development',
 			rating: 5
 		},
 		{
 			title: 'Lua',
-			description: 'Simple configuration language used for Neovim and other applications.',
+			description: 'Configuration',
 			rating: 2
 		},
 		{
 			title: 'SQL',
-			description:
-				'Database query language used for data storage and retrieval in relational databases.',
+			description: 'Database query language',
 			rating: 3
 		},
 		{
 			title: 'C',
-			description:
-				'Low level systems programming language used for operating systems and embedded systems.',
+			description: 'Systems & embedded programming',
 			rating: 3
 		},
 		{
 			title: 'C++',
-			description:
-				'Object oriented programming language used for game development and systems programming.',
+			description: 'Systems & embedded programming',
 			rating: 2
 		},
 		{
 			title: 'HTML & CSS',
-			description: 'Web markup and styling languages used for frontend web development.',
+			description: 'Frontend web development',
 			rating: 5
 		},
 		{
 			title: 'Zig',
-			description: 'Systems programming language with a focus on safety and performance.',
+			description: 'Systems & embedded programming',
 			rating: 2
 		},
 		{
 			title: 'Nix',
-			description: 'Functional package manager used for declarative system configuration.',
+			description: 'Operating system & other configuration',
 			rating: 4
 		},
 		{
 			title: 'Java',
-			description: 'Object oriented programming language used for development on all platforms.',
+			description: 'Backend development',
 			rating: 3
 		}
 	];
