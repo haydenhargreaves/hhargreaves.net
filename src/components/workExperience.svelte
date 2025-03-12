@@ -1,19 +1,17 @@
 <script lang="ts">
+	import Work from "./work.svelte";
 	import { onMount } from 'svelte';
-	import Project from './project.svelte';
 
 	/**
-	 * Project data interface, this will be used to store the project data.
-	 * This is important for type checking and validation.
+	 * Work data interface, this will be used to store the work
+	 * experience data. This is important for type checking and
+	 * validation.
 	 */
-	interface ProjectData {
-		title: string;
+	interface WorkData {
+		company: string;
+		position: string;
+		timeframe: string;
 		description: string;
-		date: string;
-		stack: string[];
-		image: string | null;
-		imageAlt: string | null;
-		link: string | null;
 	}
 
 	/**
@@ -25,14 +23,14 @@
 	}
 
 	/**
-	 * Path to the project data on the server.
+	 * Path to the work data on the server.
 	 */
-	const projectsDataPath: string = '/projects/data.json';
+	const workDataPath: string = '/work/data.json';
 
 	/**
-	 * Store the project data in an array of objects.
+	 * Store the work data in an array of objects;
 	 */
-	let projects: ProjectData[] = [];
+	let workExp: WorkData[] = [];
 
 	/**
 	 * Store the error message if the server request fails.
@@ -41,17 +39,17 @@
 	let error: ServerError | null = null;
 
 	/**
-	 * Fetch the project data from the server.
+	 * Fetch the work experience form the server.
 	 */
-	onMount(async () => {
+	onMount(async() => {
 		try {
 			// Paths are relative to /static
 			// Svelte deploys /static for me!
-			const response = await fetch(projectsDataPath);
+			const response = await fetch(workDataPath);
 			if (!response.ok) {
 				error = {
 					message:
-						'Failed to retrieve project data. Please try again later. If the issue persists, contact me!',
+						'Failed to retrieve work experience data. Please try again later. If the issue persists, contact me!',
 					code: response.status
 				};
 				return;
@@ -60,17 +58,14 @@
 
 			// Validate the data (Important!):
 			if (Array.isArray(data)) {
-				projects = data.map((project) => {
+				workExp = data.map((exp) => {
 					// TODO: Sort the projects by date
 					// This will either require a custom function or a new data system
 					return {
-						title: project.title || '',
-						description: project.description || '',
-						date: project.date || '',
-						stack: project.stack || '',
-						image: project.image || '',
-						imageAlt: project.imageAlt || '',
-						link: project.link || ''
+						company: exp.company || '',
+						position: exp.position || '',
+						description: exp.description || '',
+						timeframe: exp.timeframe || '',
 					};
 				});
 			} else {
@@ -92,16 +87,16 @@
 	if (error) console.error(error);
 </script>
 
-<div class="mt-24">
-	<h2 class="py-2 text-xl font-semibold text-blue-300 border-b-1 border-gray-600">PROJECTS</h2>
+<div class="">
+	<h2 class="py-2 text-xl font-semibold text-blue-300 border-b-1 border-gray-600">WORK EXPERIENCE</h2>
 	{#if error}
 		<p class="my-4 text-red-300 italic">
 			<span class="font-semibold not-italic">Error {error.code}:</span>
 			{error.message}
 		</p>
 	{:else}
-		{#each projects as project}
-			<Project {...project} />
+		{#each workExp as exp}
+			<Work {...exp} />
 		{/each}
 	{/if}
 </div>

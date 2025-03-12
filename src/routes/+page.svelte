@@ -1,5 +1,6 @@
 <script>
 	import Projects from '../components/projects.svelte';
+	import Work from '../components/workExperience.svelte';
 	import Skills from '../components/skills.svelte';
 </script>
 
@@ -23,6 +24,7 @@
 <div class="mt-12 flex w-full flex-col md:mt-24 md:flex-row">
 	<div class="flex-1 md:w-2/3 md:flex-none">
 		<div class="w-full px-4 md:w-3/4 md:px-0">
+			<Work />
 			<Projects />
 		</div>
 	</div>
