@@ -190,21 +190,43 @@ set visualbell
 set noerrorbells
 ```
 
-## What is Missing 
-- A good way to find files, like a fuzzy finder. However, this is a personal preference, I do not like a tabular editor
-  I prefer a simpler interface with a fuzzy finder and marks via harpoon.
-- Files missing and not displaying because of a `.idea` folder, and just the creation of the `.idea` folder.
-- Really struggles with multi-language projects.
-- LSP and syntax highlighting is very slow.
+## Disclaimer
+The following sections will review my findings and the results of this experiment. Keep in mind, anything I say is 
+100% my own opinion, and every user will likely have a different experience. Nothing here is **fact** just simply
+how I feel about each tool.
 
-## Unexpected?
-- The vim motions are really smooth and excellent.
+## What is Missing 
+After using the JetBrains products for a month, I have noticed a few things that were missing that made my development
+experience slightly more cumbersome. For example, I did not find a very good way to search for files, options like
+**class search** or **symbol search** are powerful, but sometimes I want to search for a file or navigate quickly between
+files. I was not able to find this functionality using the default tooling in the Idea products. 
+
+Another thing I was not a huge fan of is the `.idea` folder that is created in the root of each project. This is a small
+complaint, but in large projects, it can create more bloat in the source. Many times I experienced issues with files 
+loading properly due to a corrupted `.idea` folder.
+
+Finally, the biggest issue I noticed was the LSP and syntax highlighting was very slow and at times would crash. At 
+times, I would have to stop working and wait for my editor to "catch up" and highlight my code or generate LSP completions.
+Furthermore, in multi-language projects, the tools struggle pretty badly too, due to the single language nature of the 
+tools. Of course, there are solutions to this problem through plugins, but throughout this experience I did not install 
+them as mentioned previously.
 
 ## What JetBrains Does Better
-- Markdown preview is nice, but missing some syntax highlighting in the code blocks, vim for example.
-- Git integration is very nice, overwhelming at first, but can be very effective.
-- LSP, treesitter, and git integration all out of the box is nice for beginners. 
-- Multiple projects is also a huge help, though, tools like `Tmux-sessionizer` work for terminal workflows.
-- Messages for TODO, warning and errors when using git functions.
+Of course, the JetBrains suite is industry grade software, which comes along with lots of powerful built-in tools. Such
+as Git integration. The source control integration is exceptional and allows for easy switching between branches using their
+**smart checkout** feature. There were times when I still needed to pull out the command line to solve complex git issues,
+but for the most part, the UI/UX was good and fairly easy to learn. I also really liked that `// TODO: ...` comments were
+highlighted to stand out and when commits containing TODOS were created, a notification was pushed to the user. Small 
+things like this really help the tools stand out and feel user-friendly.
+
+Other features like the LSP and syntax highlighting are installed out of the box. This is a huge win for those who do not
+want to spend hours configuring their system and tools before working. However, that is *exactly* who I am, so this was 
+not a huge benefit to me, but it definitely made the migration much faster. Another smaller feature that can be included
+in that list is the **markdown previewer**, which was a nice feature to see. Most modern editors have this feature, so I 
+am sure this is nothing new, but vim is not able to achieve this functionality natively.
+
+Finally, the last feature I really enjoyed was the project sessionizer. The ability to switch between projects with the 
+click of a button is amazing. However, I did not find myself using it very often. Usually, the only time I needed to use
+it was when I first opened the editor and had to select or create a project.
 
 ## The Verdict
