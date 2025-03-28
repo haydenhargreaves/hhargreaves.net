@@ -87,7 +87,7 @@
 	if (error) console.error(error);
 </script>
 
-<div class="">
+<div class="mt-24">
 	<h2 class="py-2 text-xl font-semibold text-blue-300 border-b-1 border-gray-600">WORK EXPERIENCE</h2>
 	{#if error}
 		<p class="my-4 text-red-300 italic">
