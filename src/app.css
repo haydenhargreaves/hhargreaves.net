@@ -33,11 +33,11 @@
   }
 
   div.journal-wrapper ul {
-    @apply list-disc list-outside;
+    @apply list-disc list-outside ml-6;
   }
 
   div.journal-wrapper ol {
-    @apply list-decimal list-inside;
+    @apply list-decimal list-inside ml-6;
   }
 
   div.journal-wrapper h1 {
@@ -66,8 +66,7 @@
   }
 
   div.journal-wrapper blockquote {
-    @apply border-l-4 border-blue-300 p-4 my-4;
-
+    @apply border-l-4 border-blue-300 p-4 my-4 bg-[#252525] rounded-sm;
   }
 
   div.journal-wrapper a {
