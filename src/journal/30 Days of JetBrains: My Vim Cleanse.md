@@ -7,7 +7,7 @@ Desc: After using Neovim for years, I tried the JetBrains products for a month. 
 
 ###### Author: Hayden Hargreaves
 
-###### Published: 02/25/2025
+###### Published: 03/27/2025
 
 ## Background
 
@@ -75,7 +75,7 @@ JetBrains products.
 
 With my student email, I qualify for free access to the JetBrains suite, which is a huge factor in this
 choice. A subscription for a JetBrains editor is nearly $100 a year, **per editor**. In this experiment,
-I will be using **PyCharm**, **WebStorm**, **GoLand**, **CLion**, and **DataGrep**. I do not want to spend
+I will be using **PyCharm**, **WebStorm**, **GoLand**, **CLion**, and **DataGrip**. I do not want to spend
 hundreds of dollars on an editor when so many free options exist, but their education benefits, I cannot
 use that as an excuse. Furthermore, I may as well take advantage of the benefits while I have them!
 
@@ -87,7 +87,7 @@ vim motions natively into the editor. In the past, I have used the **VSCode Neov
 slow, buggy and simply just bad. However, even in just the short time writing this article, I have not noticed
 any large issues with the vim motions in the JetBrains plugin.
 
-Another thing I will miss during these 30 days is the plugins I use in my Neovim configuration. Bellow, you
+Another thing I will miss during these 30 days is the plugins I use in my Neovim configuration. Below, you
 can see a collection of each plugin I use in my setup. Quite a few! Some of my favorites being **Harpoon**
 and **Telescope** which allow me to move between buffers (similar but different from files) with ease. During
 this experiment, I will not install any of these plugins into my JetBrains editors. I could very easily convert
@@ -148,7 +148,7 @@ JetBrains IDEs. They are listed below:
 
 ## Artificial Intelligence
 
-With AI on the rise, I am posed with the question of using an AI tool in my editor or not. As you've seen above,
+With AI on the rise, I am faced with the question of using an AI tool in my editor or not. As you've seen above,
 I use **GitHub Copilot** in my Neovim config, which has served me well. In my experience, it is bad at generating
 complex code, but it does an exceptional job with helping me write comments and boilerplate code. However, I have
 found that I think less and rely on Copilot far too much. During these 30 days, I hope to break this habit, which
@@ -179,7 +179,7 @@ out-of-the-box experience.
 " vnoremap J :m '>+1<CR>gv=gv<CR>
 " vnoremap K :m '<-2<CR>gv=gv<CR>
 
-" These do work! Indent lines with tab and shift-tab
+" Indent lines with tab and shift-tab
 nnoremap <TAB> V>
 nnoremap <S-TAB> V<
 vnoremap <TAB> >gv
@@ -189,6 +189,9 @@ vnoremap <S-TAB> <gv
 set visualbell
 set noerrorbells
 ```
+
+This is a sample `.ideavimrc` file which I used for the month. A lot of the settings I found myself wanting to tweak
+could be done through the menus in the editor itself. Which at times, proved to be rather difficult.
 
 ## Disclaimer
 The following sections will review my findings and the results of this experiment. Keep in mind, anything I say is 
@@ -201,15 +204,18 @@ experience slightly more cumbersome. For example, I did not find a very good way
 **class search** or **symbol search** are powerful, but sometimes I want to search for a file or navigate quickly between
 files. I was not able to find this functionality using the default tooling in the Idea products. 
 
-Another thing I was not a huge fan of is the `.idea` folder that is created in the root of each project. This is a small
+Another thing I was not a huge fan of is the `.idea` directory that is created in the root of each project. This is a small
 complaint, but in large projects, it can create more bloat in the source. Many times I experienced issues with files 
-loading properly due to a corrupted `.idea` folder.
+loading properly due to a corrupted `.idea` directory. Or even times when the files would get hidden in my source tree due
+to an issue in the editor config. I don't love that the editor requires setup for each project, similar to the `.vs` 
+directory from [Visual Studio Code](https://code.visualstudio.com).
 
 Finally, the biggest issue I noticed was the LSP and syntax highlighting was very slow and at times would crash. At 
 times, I would have to stop working and wait for my editor to "catch up" and highlight my code or generate LSP completions.
-Furthermore, in multi-language projects, the tools struggle pretty badly too, due to the single language nature of the 
-tools. Of course, there are solutions to this problem through plugins, but throughout this experience I did not install 
-them as mentioned previously.
+I often found myself having to close a file and open it again to get the syntax highlighting to function again. Which 
+I have never had to deal with in Neovim. Furthermore, in multi-language projects, the tools struggle pretty badly too, 
+due to the single language nature of the tools. Of course, there are solutions to this problem through plugins, but 
+throughout this experience I did not install them as mentioned previously.
 
 ## What JetBrains Does Better
 Of course, the JetBrains suite is industry grade software, which comes along with lots of powerful built-in tools. Such
@@ -230,3 +236,60 @@ click of a button is amazing. However, I did not find myself using it very often
 it was when I first opened the editor and had to select or create a project.
 
 ## The Verdict
+So what was the point of this whole thing? Firstly, I need to be able to tell other people **why I use Neovim vs. other
+editors.** Jokes aside, there is a real reason. It was pointed out to me that maybe I am handicapping myself or missing
+out on tools that might help my development workflow. I try not to disregard things that I haven't used, and since I 
+haven't used an editor that isn't Neovim in **years**, I thought it was only fair I give them a chance.
+
+During this month of JetBrains, I learned a lot about what I like and what I don't like. For example, I still work best
+with keyboard driven workflows and prefer TUI ([Terminal User Interface](https://en.wikipedia.org/wiki/Text-based_user_interface))
+over a GUI (Graphical User Interface). Having to reach between the mouse and keyboard was a driving reason that I switched
+to Neovim in the first place, and I still believe it is a strong argument for the tool. However, sometimes preference is
+not enough when the tooling is **objectively better.**
+
+In my experience, I have narrowed the editors down into two categories: **Worth the pain** and **just not strong enough.**
+
+#### Worth the Pain
+- **[Rider](https://www.jetbrains.com/rider/)** for C# development
+- **[Clion](https://www.jetbrains.com/clion/)** for large C/C++ projects with CMake
+- **[IntelliJ](https://www.jetbrains.com/idea/)** for Java development
+
+#### Just Not Strong Enough
+- **[GoLand](https://www.jetbrains.com/go/)** for Go development
+- **[WebStorm](https://www.jetbrains.com/webstorm/)** for web development
+- **[PyCharm](https://www.jetbrains.com/pycharm/)** for python development
+
+You may notice that *every* JetBrains product was not listed above. That is simply because I did not use every single one.
+I have never once found a need to write PHP code and therefore, did not use the PhpStorm editor. It would be unfair to 
+try and rate products I have never used. So why did I rate each of these editors the way I did? I have a simple 
+guideline: **language complexity.** Languages Python or JavaScript are simple enough (syntax wise) that I do not feel the 
+need to have such powerful tools. The editors placed in the "Just Not Strong Enough" categories do not provide enough help 
+to me to outweigh the lack of preference. Go is also a fairly simple language with very little 
+"[syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar)." In addition, lots of programming experience is in Go,
+so I have no problem writing an application start to finish without the need for complicated tooling.
+
+How about the three in the "Worth the Pain" category? Languages like C# and Java are (in my opinion) a complex language 
+with features that really benefit from powerful tools. In my experience, [object-oriented](https://en.wikipedia.org/wiki/Object-oriented_programming)
+programming languages are the hardest to develop with poor tooling. The power that Rider specifically provides in a huge
+C# codebase is unrivaled. This [survey](https://www.jrebel.com/blog/best-java-ide) from 2024-2025 says that IntelliJ IDEA 
+is the most popular editor among developers for the Java programming language. So I guess it's safe to say I am not the 
+only one who feels this way!
+
+>
+> IntelliJ IDEA has firmly held the top spot over that timespan, with the Java IDE's popularity only increasing from 71% to 84%.
+> 
+
+The last editor on the list is Clion. The reason I added Clion to the "Worth the Pain" list is simply because I am bad
+at writing C. I know, hard to believe, but I actually don't know how to use CMake and really don't want to learn. So for
+projects that require dependencies, I really struggle to compile and run the program. Clion abstracts a lot of the hardship
+involved with packaging and compiling C programs which is why I will likely continue to use it for projects with many 
+dependencies.
+
+## JetBrain > Neovim?
+So after all of that, will I continue using Neovim for everything I do, or will I strictly use JetBrains products? I hope
+that after reading the previous section, you will know the answer. I am looking forward to jumping back into Neovim and 
+getting work done with "blazing speed," but I now understand that sometimes a full-fledged IDE is just the better option.
+
+I hope that reading this will shed some light on some of the bias many programmers develop over time. Maybe even inspire
+you to try something new, even if its only for a month, or even a week! You might love it! Or at the very worst, you might
+learn something.
