@@ -34,7 +34,7 @@
 				<p class="px-3">Journal</p>
 			</a>
 			<a
-				href="https://github.com/Azpect3120"
+				href="https://github.com/haydenhargreaves"
 				target="_blank"
 				class="transition-all duration-150 hover:text-blue-300"
 				aria-label="GitHub"
@@ -105,7 +105,7 @@
 				aria-label="Journal">Journal</a
 			>
 			<a
-				href="https://github.com/Azpect3120"
+				href="https://github.com/haydenhargreaves"
 				target="_blank"
 				class="block px-4 py-2 text-gray-200 hover:text-blue-300"
 				on:click={toggleMobileMenu}

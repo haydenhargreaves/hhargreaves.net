@@ -167,7 +167,7 @@
 				</div>
 				<div class="my-4">
 					<h3 class="text-sm font-semibold text-gray-200">GitHub</h3>
-					<p class="py text-xs text-gray-200">Azpect3120</p>
+					<p class="py text-xs text-gray-200">haydenhargreaves</p>
 				</div>
 			</div>
 		</div>
