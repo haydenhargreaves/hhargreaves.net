@@ -1,17 +1,5 @@
 [
   {
-    "title": "Cellular Automation Simulation",
-    "description": "A cellular automation simulation using user defined rule sets. Currently, this is simply, a Conway's Game of Life simulation.",
-    "date": "February, 2025 - Current",
-    "stack": [
-      "Javascript",
-      "SvelteKit"
-    ],
-    "image": "projects/cellularAutomation.png",
-    "imageAlt": "Image of my cellular automation game",
-    "link": "https://github.com/haydenhargreaves/CellularAutomation"
-  },
-  {
     "title": "TCP Server Notification System",
     "description": "Server/Client TCP notification system for communication between a server and many clients. A custom event loop and protocol was created to handle the communication between the server and clients.",
     "date": "February, 2025 - Current",

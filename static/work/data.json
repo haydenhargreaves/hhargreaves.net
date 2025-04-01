@@ -1,0 +1,32 @@
+[
+  {
+    "company": "Poppin' Jobs",
+    "position": "Junior Backend Engineer",
+    "description": "Develop and maintain backend services using .NET and C#. Collaborate with frontend developers to integrate APIs and enhance user experiences. Work with SQL Server for database design, optimization, and management. Assist in implementing cloud solutions on Azure, ensuring scalability and reliability. Write unit tests and participate in code reviews to maintain code quality. Troubleshoot and resolve technical issues as they arise.",
+    "timeframe": "March 2025 - Present"
+  },
+  {
+    "company": "Bottom line Business Solutions",
+    "position": "IT Technician & Staff Accountant",
+    "description": "Completing data entry tasks and bank statement reconciliation. Building and hosting a web application to manage client data. On-site hosting with home server, including VPN.",
+    "timeframe": "June 2020 - Present"
+  },
+  {
+    "company": "Data Annotation Tech",
+    "position": "Contractor - AI Model Trainer",
+    "description": "Training AI models by answering questions and solving programming problems.",
+    "timeframe": "January 2025 - Present"
+  },
+  {
+    "company": "Backcountry Horsemen of California",
+    "position": "Web Developer",
+    "description": "Developed and hosted a new website while maintaining the current website. Managed domain, SSL licensing, and managed online presence.",
+    "timeframe": "September 2023 - April 2024"
+  },
+  {
+    "company": "Looksee Internship",
+    "position": "Backend Engineer",
+    "description": "Developed an HTTP back end serving video content to a mobile application. Managed and deployed a live demo application. Created architecture for secure client/server communication.",
+    "timeframe": "January 2024 - February 2024"
+  }
+]
