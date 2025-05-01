@@ -250,8 +250,52 @@ and [more](https://elixir-lang.org/cases.html).
 
 ## The Beginning
 
+Personally, I am of the believe the best (and maybe even only) way to learn a programming language is to build something. No matter how many 
+videos you watch, tutorials you read, or examples you look at, you will never fully understand the nuances of a language until you have tried 
+it out yourself. Of course, this does assume you have a basic understanding of programming and software design. So, to adhere to my own advice,
+the first thing I did was create a small project. The ever-dreaded, **To-do List.** 
+
+I choose this project because it is simple, I have written a million of them, it allows me to learn terminal I/O, file I/O, basic data handling,
+and some more complex data types such as maps and lists. Typically, my first go-to application when learning a new language is a simple web server.
+But, since I wanted to experiment with **Phoenix** I decided to wait until after getting my hands on the language before trying such a detailed 
+framework.
+
+The application can be found on my GitHub [here](https://github.com/haydenhargreaves/ElixirTodo). I would like to note, I did not spend much effort on the repo or making the UI very beautiful.
+I hope you can understand that quality was not the goal here. 
+
+After writing this simple CLI tool I felt far more confident in my Elixir ability and the ability to read the docs and find what I was looking for 
+without just prompting an LLM to solve my problems.
+
+But that reminds me, I actually lied to you. The first thing I did was *not* write the to-do list. No, the very first thing I did was read through 
+a good chunk of the [Elixir Getting Started Guide](https://hexdocs.pm/elixir/introduction.html). In the past few years, I have tried my hand at over a dozen programming languages, many of 
+which I gave up on very fast. The most common complaint I have with modern programming languages is their lack of comprehensive documentation. However,
+the Elixir documentation *blew my socks off!* The documentation is **amazing.** Not only is it very easy to read, it **makes sense.** I can remember trying
+to learn a few languages and trying to read their docs was a nightmare, *cough cough, Zig.* After just a few hours, I had a pretty solid understanding of 
+the language at a semantic level and was able to read through more complicated examples with ease. 
+
+The introduction linked above is a complete walk through of *almost* everything you would need to write industry grade software in the Elixir language.
+Even after only reading through the first 10 or so sections, I was beyond ready to begin writing code.
+
+The [modules](https://hexdocs.pm/elixir/Kernel.html) segment of the docs is just as powerful, especially once you have jumped into the deep end of writing your own code. Documentation complete 
+with syntax, functions, types, a summary and even examples can be found for each and every module in the standard library. It really is the best resource
+I have found (so far) for learning the language. Which is not something I can say for other languages.
+
+## An Upgrade
+
+So now I have written something small, and read through the documentation. What's next? Well, a large scale application, duh! For this project, I will build
+a full stack web application using the Phoenix Framework. This app will allow users to share, copy, create and search for recipes. I have recently developed 
+a love for cooking and having to store all my recipes in my notes app is cumbersome. Plus, my parents are **amazing** cooks and I would to be able to "borrow" 
+their recipes and save them for myself, without having to copy them manually.
 
 
-The repo:
-https://github.com/haydenhargreaves/ElixirTodo
+##### More about the app, and what I liked and hated.
+
+
+## Elixir Review
+
+After writing a *quality* full stack application I have learned enough about the language to develop an opinion.
+
+This is what I found...
+
+
 
