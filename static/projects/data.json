@@ -8,7 +8,7 @@
     ],
     "image": null,
     "imageAlt": null,
-    "link": "https://github.com/Azpect3120/TCPNotificationManager"
+    "link": "https://github.com/haydenhargreaves/TCPNotificationManager"
   },
   {
     "title": "Python Stock Market Analysis",
@@ -19,7 +19,7 @@
     ],
     "image": "projects/pythonStockMarketAnalysis.png",
     "imageAlt": "Image of the python application and its result",
-    "link": "https://github.com/Azpect3120/PythonStockAnalysis"
+    "link": "https://github.com/haydenhargreaves/PythonStockAnalysis"
   },
   {
     "title": "Acoustic Drone Detection Sensor Network",
@@ -42,7 +42,7 @@
     ],
     "image": "projects/tradingBot.jpg",
     "imageAlt": "Image of the stock market. Stock image.",
-    "link": "https://github.com/Azpect3120/TradingBot"
+    "link": "https://github.com/haydenhargreaves/TradingBot"
   },
   {
     "title": "Web Database Connection Tool",
@@ -56,7 +56,7 @@
     ],
     "image": "projects/webDatabaseViewer.png",
     "imageAlt": "Image of the web database viewer",
-    "link": "https://github.com/Azpect3120/Web-Database-Viewer"
+    "link": "https://github.com/haydenhargreaves/Web-Database-Viewer"
   },
   {
     "title": "Document Sync Protocol",
@@ -69,7 +69,7 @@
     ],
     "image": null,
     "imageAlt": null,
-    "link": "https://github.com/Azpect3120/document-sync-protocol"
+    "link": "https://github.com/haydenhargreaves/document-sync-protocol"
   },
   {
     "title": "HTMX Class",
@@ -82,7 +82,7 @@
     ],
     "image": "projects/htmxClass.png",
     "imageAlt": "Image of the application that was built during the class",
-    "link": "https://github.com/Azpect3120/htmx-class"
+    "link": "https://github.com/haydenhargreaves/htmx-class"
   },
   {
     "title": "Gomon.nvim",
@@ -94,7 +94,7 @@
     ],
     "image": "projects/gomon.png",
     "imageAlt": "Image of Gomon.nvim github repository",
-    "link": "https://github.com/Azpect3120/gomon.nvim"
+    "link": "https://github.com/haydenhargreaves/gomon.nvim"
   },
   {
     "title": "Vendor Management System",

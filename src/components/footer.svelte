@@ -26,7 +26,12 @@
 			></path>
 		</svg>
 	</a>
-	<a href="https://github.com/Azpect3120" aria-label="Github Profile" target="_blank" class="mx-1">
+	<a
+		href="https://github.com/haydenhargreaves"
+		aria-label="Github Profile"
+		target="_blank"
+		class="mx-1"
+	>
 		<svg class="w-5" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
 			><path
 				fill-rule="evenodd"
