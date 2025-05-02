@@ -290,6 +290,8 @@ their recipes and save them for myself, without having to copy them manually.
 
 ##### More about the app, and what I liked and hated.
 
+This article is under construction. Come back later for more!
+
 
 ## Elixir Review
 
