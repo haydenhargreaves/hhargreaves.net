@@ -1,7 +1,7 @@
 Date: 2025/04/28
 Desc: I have decided to begin the journey of learning functional programming. Here is my experience.
 
-# What is a Functional Programming Language: Featuring Elixir.md
+# What is a Functional Programming Language: Featuring Elixir
 
 <img src="/journal/elixir-logo.png" alt="Jet Brains Logo" style="background-color: white; border-radius: 15px; padding: 10px; margin-inline: 10px; margin-block: 2.5%;" width="300">
 
