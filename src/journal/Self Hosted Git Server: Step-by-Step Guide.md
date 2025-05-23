@@ -1,4 +1,4 @@
-Date: 2025/05/??
+Date: 2025/05/22
 Desc: Rolling your own version control is not as hard as it sounds. This step by step guide will take you from 0 to 60!
 
 # Self Hosted Git Server: How to
@@ -8,7 +8,7 @@ Desc: Rolling your own version control is not as hard as it sounds. This step by
 <br>
 
 ###### Author: Hayden Hargreaves
-###### Published: 05/??/2025
+###### Published: 05/22/2025
 
 ## Background
 
@@ -57,7 +57,7 @@ Before continuing, please make sure you have everything you need to get started.
 3. **Configure docker-compose:** This is the easiest way to install Gitea
 4. **Configure the server:** The server can be configured via the web UI
 5. **Configure SSH access:** The magic begins to happen here
-6. **Install Cloudflared and setup DNS routing:** This is the final step that ties the bow on the whole system
+6. **Configure remote access:** This is the final step that ties the bow on the whole system
 
 
 ### Disclaimer
@@ -296,7 +296,7 @@ so, you are almost done!
 
 Feel free to customize these settings as you see fit, but ensure you follow the provided directions.
 
-- Do not change the port's, http or ssh, these are internal ports! To change the external ports, update the hosts
+- Do not change the port's, HTTP or SSH, these are internal ports! To change the external ports, update the hosts
 ports in the docker container.
 - Leave the user as git, we set this up for a reason!
 - Disable the **self registration** toggle in the advanced settings section (at the bottom).
@@ -341,3 +341,165 @@ Notice, we use **gitea** here as the host. Since this is how we configured our c
 If you would only like access to this server from your local network then you can stop at this step. 
 
 <br>
+
+## Configure Remote Access
+
+We will be using an existing **Cloudflare tunnel**, but I will not go into detail about setting one 
+up. It is a pretty simple process that can be done without too much explanation. So, I will assume
+you have a tunnel up and running. All we have to do, is route an endpoint from our local machine
+to sub domain in our Cloudflare tunnel. By now, this should be easy for you, since you have setup
+and configured your tunnel already (hopefully). But to remind you, you must add a record to your 
+`config.yml` file, wherever it is on your system.
+
+```yaml
+...
+
+ingress:
+    - hostname: git.domain.net       # Enter your domain here
+      service: http://localhost:4000 # Update the port as needed
+    ...
+```
+
+But that is not all, the last step you need to do is add a [CNAME record](https://en.wikipedia.org/wiki/CNAME_record) in your Cloudflare 
+DNS dashboard. This can be done manually, like you have before, or by creating an Ansible task
+as follows. This will be its own role, `cloudflared`
+
+```yaml
+# roles/cloudflared/tasks/main.yml
+
+...
+# Update domain to your own
+    
+- name: Configure cloudflare Tunnel DNS Record (CNAMEs) for *.domain.net
+  community.general.cloudflare_dns:
+    zone: "domain.net"
+    record: "{{ item }}.domain.net"
+    type: "CNAME"
+    value: "{{ tunnel_id }}.cfargotunnel.com"
+    state: present
+    proxied: true
+    api_token: "{{ cloudflare_api_key }}"
+  loop: "{{ domain_cnames }}"
+  tags:
+    - cloudflared
+    - cnames
+```
+
+Like in the previous steps, we will need some variables in our `roles/cloudflared/vars/main.yml` file.
+
+```yaml
+
+...
+
+tunnel_id: "tunnel_id"        # Enter your tunnel id here
+cloudflare_api_key: "api_key" # Enter your API key here
+
+# Include as many sub domains as you want, for now, we just need git
+gophernest_cnames:
+  - git               
+  - ...
+```
+
+You may notice, we are using an API key. This is a free and simple process which is described [here](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/)
+in the Cloudflare docs. The key will allow us to update DNS records using their API.
+
+Now, you will be able to access the web interface of your git server at *git.yourdomain.net*! However, 
+we cannot use this domain with SSH to complete actions, such as cloning. At this state, you can clone
+(or do other actions) using a URL that looks like this:
+
+```bash
+git clone git@your_servers_ip:username/repo.git
+```
+
+*NOTE: Tunneling TCP or UDP is more complex and will not be apart of this guide.*
+
+But this is not ideal, nobody wants to use their server IP address to access their git server! So, what
+can we do? Well, the best option is to simply use a DNS the *old* way. In your Cloudflare DNS panel, 
+create an **A** entry with a value of whatever subdomain you want (we will need this later) and
+the content being your servers IP address. For this record, make sure to *deselect* the proxied 
+check box. What this will do is route the traffic from **subdomain.domain.net** to the IP address.
+
+But why do we need that? Having a route will allow us to configure our SSH config to use this URL and 
+access our git server via SSH without much effort. Update the previous record we created in our `~/.ssh/config` 
+file to look more like this:
+
+```sshconfig
+Host gitea # Remeber this value!
+  Port 222
+  User git
+  HostName subdomain.domain.net # This is the only change
+  IdentityFile ~/.ssh/key
+```
+
+You should now be able to complete SSH actions using the **gitea** domain! An example would look like this:
+
+```bash
+git clone git@gitea:username/repo.git
+```
+
+Simple right! We are just about done, the last thing we need to do is update our Gitea config to use this 
+new route in the frontend. You may notice that your web UI will provide a different value when you press 
+clone on a repo (for example). To fix this, all you need to do edit your config file at 
+`/home/git/gitea/gitea/conf/app.ini`. You will replace the line starting with `SSH_DOMAIN` to match whatever
+value you labeled your SSH key to use.
+
+For example:
+
+```ini
+[server]
+...
+SSH_DOMAIN = gitea
+```
+
+You may also edit any other domain values you see to match your own domain. These values will update the 
+text fields that are provided to the user when actions are taken. After restarting the docker compose image
+you will see the updates live!
+
+For those using Ansible, this config change can be done using a simple task added to your `roles/git/tasks/main.yml`
+file.
+
+```yaml
+# roles/git/tasks/main.yml
+
+...
+
+- name: Update the ssh domain in the config file if it exists
+  replace:
+    path: /home/git/gitea/gitea/conf/app.ini
+    regexp: '^SSH_DOMAIN = (.*)'
+    replace: 'SSH_DOMAIN = gitea'
+  become: true
+  tags:
+    - git
+    - config
+```
+
+*NOTE: I have also found it helpful to append this new task to the bottom of the **git** role as a safety measure.*
+
+```yaml
+# roles/git/tasks/main.yml
+
+...
+
+- name: Restart Docker compose application
+  community.docker.docker_compose_v2:
+    files: /home/git/docker-compose.yml
+    project_src: /home/git
+    state: restarted
+    pull: always
+  become: true
+  tags:
+    - git
+    - restart
+```
+
+This will ensure the application is in its most recent state after each update.
+
+
+## Conclusion
+
+You now have your own version control server running in your home server! This solution should not replace 
+GitHub in your workflow, some projects belong in the public eye. Your favorite projects are a great way for
+future employers to see what kind of things you can do! But some things, like your Ansible config files, or 
+your NixOS configuration, does not need to be public. Your home git server is a great place for those projects!
+Just remember to make them private repos in Gitea ;)
