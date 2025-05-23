@@ -12,8 +12,7 @@ Desc: Rolling your own version control is not as hard as it sounds. This step by
 
 ## Background
 
-Version control is one the most powerful tools used by develops, and Git is the most widely adopted
-"flavor" **version control system** (vsc). However, when it comes to hosting Git, everyone does it a 
+Version control is one of the most powerful tools used by developers, and Git is the most widely adopted **version control system** (vcs). However, when it comes to hosting Git, everyone does it a 
 little differently. Most people use **[GitHub](https://github.com)** or even [GitLab](https://about.gitlab.com). Large companies typically host their
 own for an added layer of safety and security. That is exactly what this guide will cover, on a smaller
 scale of course!
