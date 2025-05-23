@@ -14,11 +14,11 @@ Desc: Rolling your own version control is not as hard as it sounds. This step by
 
 Version control is one of the most powerful tools used by developers, and Git is the most widely adopted **version control system** (vcs). However, when it comes to hosting Git, everyone does it a 
 little differently. Most people use **[GitHub](https://github.com)** or even [GitLab](https://about.gitlab.com). Large companies typically host their
-own for an added layer of safety and security. That is exactly what this guide will cover, on a smaller
+own for an added layer of safety and security. That is exactly what this guide will cover, but on a smaller
 scale of course!
 
-But before we dig into the details, what exactly does it mean to *roll your own version control* or *host
-your own git server*? Well its simple, we are going to use a server of our own to deploy an application
+Before we dig into the details, what exactly does it mean to *"roll your own version control"* or *"host
+your own git server"*? Well, it's simple, we are going to use a server of our own to deploy an application
 that serves as a web-UI and *hub* for our Git repositories. Before you freak out, we are not going to 
 actually write any code or build the application, there are countless open-source options available for 
 **free** that "home-labbers" such as myself. In this guide, we will be using [Gitea](https://about.gitea.com) due to its ease of use
