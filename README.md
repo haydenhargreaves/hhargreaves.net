@@ -1,4 +1,5 @@
-# Create Journal Posts
+# hhargreaves.net
+## Create Journal Posts
 
 To create a new post, all you must do is create a new markdown file in the `./src/journal/` directory.
 However, before you begin writing, you must first add the following two lines at the top of the 
