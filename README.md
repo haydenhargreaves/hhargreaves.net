@@ -1,4 +1,8 @@
 # hhargreaves.net
+
+This is live at [https://hhargreaves.net](https://hhargreaves.net)
+
+
 ## Create Journal Posts
 
 To create a new post, all you must do is create a new markdown file in the `./src/journal/` directory.
