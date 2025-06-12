@@ -9,7 +9,7 @@ Desc: I have decided to begin the journey of learning functional programming. He
 
 ###### Author: Hayden Hargreaves
 
-###### Published: 05/??/2025
+###### Published: 06/12/2025
 
 ## Background
 
