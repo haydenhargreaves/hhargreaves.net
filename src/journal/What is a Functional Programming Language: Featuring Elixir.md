@@ -280,24 +280,7 @@ The [modules](https://hexdocs.pm/elixir/Kernel.html) segment of the docs is just
 with syntax, functions, types, a summary and even examples can be found for each and every module in the standard library. It really is the best resource
 I have found (so far) for learning the language. Which is not something I can say for other languages.
 
-## An Upgrade
-
-So now I have written something small, and read through the documentation. What's next? Well, a large scale application, duh! For this project, I will build
-a full stack web application using the Phoenix Framework. This app will allow users to share, copy, create and search for recipes. I have recently developed 
-a love for cooking and having to store all my recipes in my notes app is cumbersome. Plus, my parents are **amazing** cooks and I would to be able to "borrow" 
-their recipes and save them for myself, without having to copy them manually.
-
-
-##### More about the app, and what I liked and hated.
-
-This article is under construction. Come back later for more!
-
-
-## Elixir Review
-
-After writing a *quality* full stack application I have learned enough about the language to develop an opinion.
-
-This is what I found...
+##### Conclusion in Progress
 
 
 
