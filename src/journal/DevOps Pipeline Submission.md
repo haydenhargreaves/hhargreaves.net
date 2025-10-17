@@ -30,7 +30,7 @@ currently running!
 ### Overview
 
 To provide a short TL;DR of this submission, I implemented the following: A complete CI/CD pipeline
-which tests, lints, builds and deploys the checked-in code as soon as it is pushed. This allows 
+which tests, lints, builds and deploys the checked-in code as soon as it is merged. This allows 
 software engineers to focus their efforts on building quality software and not on making sure the 
 deployments are working.
 
@@ -283,6 +283,21 @@ jobs:
 > to disable the requirement for them to pass before this workflow executes.
 >
 
+### Staging Environments
+
+This implementation does not include a staging environment, but it leaves room for one to be integrated
+very easily. A **staging environment** is a place for code to rest and be tested before being deployed
+to production. It is a nearly identical environment to production which allows for simulation testing 
+a before live production deployment. 
+
+Staging is important because it allows the development team to test the application as it exists live.
+Some things like database integration, memory usage and other things can only be tested using a live 
+application, but testing in production is bad practice.
+
+Due to time constraints there is no staging environment in this submission, however, the ideas used
+to create the production environment can be mirrored into a staging branch to create a proper application
+deployment life-cycle.
+
 ### Continuous Delivery vs. Continuous Deployment
 
 Remember the difference between nightly builds and continuous integration? A similar debate exists 
@@ -441,56 +456,6 @@ const response = await fetch('https://demob.gophernest.net/simulation', {...});
 
 // ~line 31
 const response = await fetch('https://demob.gophernest.net/simulation');
-```
-
-
-### Hosting with Cloudflare
-
-I will cover this section pretty briefly, to leave some things up for conversation during the interview, 
-but also because I did not provide any of the code required to achieve this portion. Cloudflare offers 
-a reverse proxy or **tunnel** which allows my server to deploy an application running locally to the live 
-web without opening any ports or adjusting my firewall rules. This tool is 100% free and has been a 
-lifesaver for all of my applications.
-
-As such, I have implemented a detailed system that can deploy new DNS records and attach applications 
-to them with minimal effort. However, these scripts contain lots of personal details that would
-give anyone access to my account and the ability to manage (and cause harm) to my tunnel infrastructure.
-Therefore, this part is not included in the final submission; however, I will attach a small code snippet
-below to *inspire* you to give it a try!
-
-```yml
-...
-
-- name: Configure cloudflare Tunnel DNS Record (CNAMEs) for gophernest.net
-  community.general.cloudflare_dns:
-    zone: "gophernest.net"
-    record: "gophernest.net"
-    type: "CNAME"
-    value: "{{ tunnel_id }}.cfargotunnel.com"
-    state: present
-    proxied: true
-    api_token: "{{ cloudflare_api_key }}"
-  tags:
-    - cloudflared
-    - cnames
-    - gophernest.net
-
-- name: Configure cloudflare Tunnel DNS Record (CNAMEs) for *.gophernest.net
-  community.general.cloudflare_dns:
-    zone: "gophernest.net"
-    record: "{{ item }}.gophernest.net"
-    type: "CNAME"
-    value: "{{ tunnel_id }}.cfargotunnel.com"
-    state: present
-    proxied: true
-    api_token: "{{ cloudflare_api_key }}"
-  loop: "{{ gophernest_cnames }}"
-  tags:
-    - cloudflared
-    - cnames
-    - gophernest.net
-
-...
 ```
 
 ### Result
