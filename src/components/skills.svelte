@@ -11,7 +11,7 @@
 		{
 			title: 'Javascript',
 			description: 'Frontend web development',
-			rating: 3
+			rating: 4
 		},
 		{
 			title: 'Typescript',
@@ -46,7 +46,7 @@
 		{
 			title: 'C++',
 			description: 'Systems & embedded programming',
-			rating: 2
+			rating: 4
 		},
 		{
 			title: 'HTML & CSS',
@@ -54,19 +54,19 @@
 			rating: 5
 		},
 		{
-			title: 'Zig',
-			description: 'Systems & embedded programming',
-			rating: 2
-		},
-		{
 			title: 'Nix',
 			description: 'Operating system & other configuration',
 			rating: 4
 		},
 		{
-			title: 'Java',
+			title: 'C#',
 			description: 'Backend development',
 			rating: 3
+		},
+		{
+			title: 'Java',
+			description: 'Backend development',
+			rating: 2
 		}
 	];
 
@@ -77,12 +77,15 @@
 		'Spring Boot',
 		'Git',
 		'Docker',
+		'.NET',
+		'React',
 		'HTMX',
 		'Nginx',
 		'Gin Web Framework',
 		'SSH',
 		'PostgreSQL',
-		'Neovim'
+		'Neovim',
+		'Grafana K6'
 	];
 
 	skills.sort((a, b) => b.rating - a.rating);

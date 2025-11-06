@@ -147,11 +147,13 @@
 				<h2 class="mt-14 py-2 text-xl font-semibold text-blue-300">CONTACTS</h2>
 				<div class="mb-4">
 					<h3 class="text-sm font-semibold text-gray-200">Email</h3>
-					<p class="py text-xs text-gray-200">hhargreaves2006@gmail.com</p>
+					<a href="mailto:hhargreaves2006@gmail.com"
+						><p class="py text-xs text-gray-200">hhargreaves2006@gmail.com</p></a
+					>
 				</div>
 				<div class="my-4">
 					<h3 class="text-sm font-semibold text-gray-200">Phone</h3>
-					<p class="py text-xs text-gray-200">(623) 237 - 0838</p>
+					<a href="tel:6232370838"><p class="py text-xs text-gray-200">(623) 237-0838</p></a>
 				</div>
 				<div class="my-4">
 					<h3 class="text-sm font-semibold text-gray-200">Location</h3>
@@ -159,16 +161,22 @@
 				</div>
 				<div class="my-4">
 					<h3 class="text-sm font-semibold text-gray-200">LinkedIn</h3>
-					<p class="py text-xs text-gray-200">Hayden Hargreaves</p>
-				</div>
-				<div class="my-4">
-					<h3 class="text-sm font-semibold text-gray-200">X</h3>
-					<p class="py text-xs text-gray-200">@azpect_3120</p>
+					<a href="https://www.linkedin.com/in/haydenhargreaves/" target="_blank"
+						><p class="py text-xs text-gray-200">Hayden Hargreaves</p></a
+					>
 				</div>
 				<div class="my-4">
 					<h3 class="text-sm font-semibold text-gray-200">GitHub</h3>
-					<p class="py text-xs text-gray-200">haydenhargreaves</p>
+					<a href="https://github.com/haydenhargreaves" target="_blank"
+						><p class="py text-xs text-gray-200">haydenhargreaves</p></a
+					>
 				</div>
+			</div>
+			<div class="my-4">
+				<h3 class="text-sm font-semibold text-gray-200">Gitea</h3>
+				<a href="https://git.gophernest.net/azpect" target="_blank"
+					><p class="py text-xs text-gray-200">git.gophernest</p></a
+				>
 			</div>
 		</div>
 	</div>

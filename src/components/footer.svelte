@@ -1,7 +1,7 @@
 <footer class="flex w-full items-center justify-center">
 	<p class="mx-2 my-10 py-2 text-sm text-gray-600">&copy; 2025, Hayden Hargreaves</p>
 	<a
-		href="https://www.linkedin.com/in/hayden-hargreaves-37b2802a4/"
+		href="https://www.linkedin.com/in/haydenhargreaves/"
 		aria-label="LinkedIn Profile"
 		target="_blank"
 		class="mx-1"

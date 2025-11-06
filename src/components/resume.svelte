@@ -6,7 +6,7 @@
 	</p>
 	<p class="py-4 text-gray-200">
 		My resume can be downloaded 
-		<a href="haydenHargreavesResume.pdf" download class="group relative inline-block no-underline" target="_blank">
+		<a href="HaydenHargreavesResume.pdf" download class="group relative inline-block no-underline" target="_blank">
 			<span class="relative z-10 font-semibold text-gray-300">here.</span>
 			<span
 				class="absolute bottom-0 left-0 h-[3px] w-0 bg-blue-300 transition-all duration-300 group-hover:w-full"
