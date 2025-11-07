@@ -9,7 +9,7 @@ Desc: I have decided to begin the journey of learning functional programming. He
 
 ###### Author: Hayden Hargreaves
 
-###### Published: 05/??/2025
+###### Published: 05/21/2025
 
 ## Background
 
@@ -287,17 +287,8 @@ a full stack web application using the Phoenix Framework. This app will allow us
 a love for cooking and having to store all my recipes in my notes app is cumbersome. Plus, my parents are **amazing** cooks and I would to be able to "borrow" 
 their recipes and save them for myself, without having to copy them manually.
 
-
-##### More about the app, and what I liked and hated.
-
-This article is under construction. Come back later for more!
-
-
 ## Elixir Review
 
-After writing a *quality* full stack application I have learned enough about the language to develop an opinion.
-
-This is what I found...
-
-
+The learning process has been put on pause to focus on work, but when I make it back to 
+Elixir, I will finish the conclusion!
 

@@ -1,5 +1,7 @@
 node_modules
 .idea
+flake.lock
+bun.lockb
 
 # Output
 .output
@@ -24,5 +26,3 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 
-# Jet brains
-.idea
