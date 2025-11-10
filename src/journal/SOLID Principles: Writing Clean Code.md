@@ -1,15 +1,15 @@
 Date: 2025-11-??
-Desc: SOLID principles help developers write better code, but how?
-# SOLID Principles: Writing "Clean Code"
+Desc: Learn the SOLID principles of object-oriented design for cleaner code and better architecture, with real-world C++ examples.
+# SOLID Principles: Writing Clean Code
 
-<img src="/journal/SOLID.png" alt="Solid principles guide" style="background-color: white; border-radius: 15px; margin-inline: 10px; margin-top: 2.5%; margin-bottom: 1.5%; width: 95%; max-width: 500px;">
+<img src="/journal/SOLID.png" alt="Diagram showing SOLID design principles for OOP" style="background-color: white; border-radius: 15px; margin-inline: 10px; margin-top: 2.5%; margin-bottom: 1.5%; width: 95%; max-width: 500px;">
 
 ###### Image source: [Geeks for Geeks](https://www.geeksforgeeks.org/system-design/solid-principle-in-programming-understand-with-real-life-examples/)
 <br>
 
 ###### Author: Hayden Hargreaves
 
-###### Published: 11/??/2025
+###### Published: 11/10/2025
 
 ## Background
 
@@ -25,7 +25,7 @@ maintainable and extensible software. Adapting these principles into your own co
 
 The five principles are as follows:
 - **S** - Single-responsibility Principle
-- **O** - Open-closed Principle
+- **O** - Open/closed Principle
 - **L** - Liskov Substitution Principle
 - **I** - Interface Segregation Principle
 - **D** - Dependency Inversion Principle
@@ -33,6 +33,13 @@ The five principles are as follows:
 This article serves as an *introduction*, not a comprehensive guide. However, a simple understanding
 of the principles can help you level up as a developer!
 
+## Key Takeaways
+
+- **Single Responsibility Principle:** Each class should do one thing and have only one reason to change.
+- **Open/Closed Principle:** Code should be open for extension but closed for modification.
+- **Liskov Substitution Principle:** Subtypes must be substitutable for their base types without affecting program correctness.
+- **Interface Segregation Principle:** Never force a client to depend on methods it does not use.
+- **Dependency Inversion Principle:** Depend on abstractions, not on concrete implementations.
 
 ## Object-Oriented Programming Refresher
 
@@ -66,7 +73,7 @@ The **[Single-Responsibility Principle](https://en.wikipedia.org/wiki/Single-res
 ### The Misunderstood Principle
 
 The SRP is the simplest, yet most commonly misunderstood principle. The goal of the SRP is to **prevent
-unexpected side effects* by keeping each unit (class) simple and with only a single purpose. A class 
+unexpected side effects** by keeping each unit (class) simple and with only a single purpose. A class 
 with many responsibilities will often need to be modified as requirements change, which can lead to 
 more bugs. When a class is changed, it can impact classes that depend on it, which can result in 
 unexpected bugs in code that did not seem to change. However, a class with a **single responsibility**
@@ -263,12 +270,6 @@ class. But Bertrand Meyer suggests that [inheritance](https://en.wikipedia.org/
 > ~Bertrand Meyer
 >
 
-This is problem because it frequently introduces tight coupling if subclasses depend on the 
-implementation of a parent class. For that reason, "Uncle Bob" revised the principle to the **[Polymorphic](https://en.wikipedia.org/wiki/Polymorphism_(computer_science))
-Open/Closed Principle**. Using interfaces instead of **superclasses** (a class which has subclasses) allows 
-different implementations which can be swapped and changed with relative ease. Furthermore, the calling
-(using) code does not need to be changed, as long as the interface's requirements are met.
-
 This is a problem because it frequently introduces tight coupling if subclasses depend on the 
 implementation of a parent class. For that reason, "Uncle Bob" revised the principle to the **[Polymorphic](https://en.wikipedia.org/wiki/Polymorphism_(computer_science))
 Open/Closed Principle**. Using interfaces instead of **superclasses** (a class that has subclasses) allows
@@ -447,7 +448,6 @@ public:
     this->width = w;
     this->height = w; // Mutates height
   }
-In the context of mathematics, a square is a rectangle. However, in the context of programming, forcing a square to inherit from a rectangle typically violates the LSP. This violation occurs because the settings are being overridden, and each value is set individually from each method. The expectation for a rectangle is that the height and width will be set independently!
 
   void setHeight(int h) override {
     this->height = h;
@@ -573,7 +573,8 @@ The [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_in
 
 >
 > "Entities must depend on abstractions, not on concretions. It states that the high-level module 
-> must not depend on the low-level module, but they should depend on abstractions."
+> must not depend on the low-level module, but they should depend on abstractions." ~Robert "Uncle 
+> Bob" Martin
 >
 
 This means that a class should rely on abstractions (interfaces or abstract base classes) rather than
@@ -687,7 +688,60 @@ private:
 };
 ```
 
+## Don't Repeat Yourself
+
+Before wrapping up, there is one more guideline that is not a part of the *SOLID* acronym but is 
+relevant to programming in any paradigm. The **Don't Repeat Yourself** (DRY) rule states:
+
+>
+> "Every piece of knowledge must have a single, unambiguous, authoritative representation within a 
+> system". ~Andy Hunt and Dave Thomas
+>
+
+The DRY rule is not directly part of the **SOLID** principles; however, it is commonly paired together as 
+a result of Uncle Bob's strong feelings about the guideline.
+
+>
+> "Duplication is the root of all evil in software". ~Robert "Uncle Bob" Martin
+>
+
+The purpose of the guideline is to encourage developers to avoid writing duplicate code in a system.
+Adhering to the *DRY* principle allows developers to create modular and reusable modules. Many believers
+in the system also believe that *DRY* code is more readable and easier to maintain and troubleshoot.
+
+DRY is not the topic of this article, but if you would like to learn more, this [article](https://www.geeksforgeeks.org/software-engineering/dont-repeat-yourselfdry-in-software-development/)
+contains some solid points that support the guideline.
+
 ## SOLID Only For OOP?
 
+The focus of the SOLID principles is on **object-oriented programming**, but that does not mean they apply
+*only* to OOP. The terms "class" and "interface" can be abstracted down to their underlying philosophies,
+and the benefits of SOLID can be implemented anywhere these abstractions exist! For example, the **single
+responsibility principle** can be applied to teams, functions, modules and micro-services. The idea of
+the open/closed principle is desirable in any architecture.
 
-## "Don't Repeat Yourself" From Uncle Bob
+The **Liskov Substitution principle** is a little bit harder to apply elsewhere, but anywhere a polymorphic
+relationship is observed, the principle can apply. The **interface segregation principle** encourages the
+breakdown of large, complex contracts, which is applicable in any design context and functional 
+programming.
+
+Finally, the **dependency inversion** principle encourages decoupling via abstraction, which serves as the
+core of many architectural design patterns. Therefore, the SOLID principles originated in an OOP context,
+but they offer "timeless wisdom" ([Digital Ocean](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design#frequently-asked-questions-faqs))
+for the development and maintenance of robust, scalable systems.
+
+## Conclusion
+
+Understanding and applying the SOLID principles is not about memorizing five rules or following them
+strictly; **it’s about learning to think more critically about design**. Each principle—Single Responsibility,
+Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion—offers a lens through
+which you can identify poor architecture and refactor toward cleaner, more maintainable code. When 
+used thoughtfully, they lead to systems that are easier to test, extend, and collaborate on.
+
+While SOLID principles were born in the world of object-oriented programming, their underlying 
+philosophies reach far beyond it. Whether you’re structuring a microservice, designing a REST API, 
+or writing a simple Python script, their concepts encourage scalability, flexibility, and craftsmanship.
+The ultimate goal isn’t to follow SOLID for the sake of it, but to build software that is a pleasure
+to read, modify, and maintain.
+
+
