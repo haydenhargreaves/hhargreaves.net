@@ -401,7 +401,7 @@ adheres to the open/closed principle is easy to scale, expand and upgrade.
 
 ## Liskov Substitution Principle
 
-The Liskov Substitution Principle states:
+The [Liskov Substitution Principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle) states:
 
 >
 > "Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for 
@@ -463,7 +463,7 @@ expectation for a rectangle is that the height and width will be set independent
 
 ## Interface Segregation Principle
 
-The interface segregation principle states:
+The [Interface Segregation Principle](https://en.wikipedia.org/wiki/Interface_segregation_principle) states:
 
 > 
 > "A client should never be forced to implement an interface that it doesn’t use, or clients 
@@ -568,6 +568,124 @@ public:
 ```
 
 ## Dependency Inversion Principle
+
+The [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle) states:
+
+>
+> "Entities must depend on abstractions, not on concretions. It states that the high-level module 
+> must not depend on the low-level module, but they should depend on abstractions."
+>
+
+This means that a class should rely on abstractions (interfaces or abstract base classes) rather than
+concrete implementations. The Dependency Inversion Principle (DIP) is a specific methodology for 
+creating loosely coupled modules. When implemented, the DIP allows high-level modules to exist 
+independently of the low-level modules.
+
+A nice analogy I found states:
+
+>
+> *"In a software development team, developers depend on an abstract version control system (e.g., Git)
+> to manage and track changes to the codebase. They don't depend on specific details of how Git works 
+> internally."* ~geeksforgeeks
+>
+
+### Code Example
+
+To illustrate the DIP, we will use an example in which a high-level `Notifier` needs to send messages
+to a low-level `SMSService`.
+
+The initial implementation will work ***fine***; however, it violates the DIP. What will happen if the 
+requirements change and the `Notifier` needs to send messages to a new service, such as an `EmailService`?
+
+```cpp
+// Low-level Module (The Detail)
+class SMSService {
+public:
+  void sendSMS(const std::string &recipient, const std::string &message) const {
+    std::cout << "SMSService: Sending SMS to " << recipient << ": '" << message
+              << "'\n";
+  }
+  // No abstraction/interface here
+};
+
+// High-level Module (The Logic)
+class Notifier {
+public:
+  Notifier(const std::string &recipient) : recipient(recipient) {}
+
+  // DIP VIOLATION: Notifier (high-level) directly depends on SMSService
+  // (low-level).
+  void send(const std::string &message) const {
+    SMSService smsService; // Direct, hard dependency on the concrete class
+    smsService.sendSMS(recipient, message);
+  }
+
+private:
+  std::string recipient;
+};
+```
+
+By updating the code to adhere to the DIP, we can allow our `Notifier` class to send messages to any 
+client through the use of an abstraction.
+
+```cpp
+// 1. Abstraction (The Contract/Interface)
+class IMessageSender {
+public:
+  virtual void sendMessage(const std::string &recipient,
+                           const std::string &message) const = 0;
+  virtual ~IMessageSender() = default;
+};
+```
+
+Then, we can create our clients; for this example, we only need two of them to demonstrate the 
+power of the **Dependency Inversion Principle**.
+
+```cpp
+// 2. Low-level Module depends on Abstraction (The Detail)
+class SMSServiceDIP : public IMessageSender {
+public:
+  void sendMessage(const std::string &recipient,
+                   const std::string &message) const override {
+    std::cout << "SMSServiceDIP: Sending SMS to " << recipient << ": '"
+              << message << "'\n";
+  }
+};
+
+// We can easily add a new service without touching the Notifier!
+class EmailServiceDIP : public IMessageSender {
+public:
+  void sendMessage(const std::string &recipient,
+                   const std::string &message) const override {
+    std::cout << "EmailServiceDIP: Sending Email to " << recipient << ": '"
+              << message << "'\n";
+  }
+};
+```
+
+Finally, we can reimplement the `Notifier` class to depend only on the abstracted class and adhere 
+to the DIP.
+
+```cpp
+// 3. High-level Module depends on Abstraction (The Logic)
+class Notifier {
+public:
+  // **Dependency Injection:** The concrete service is passed in via the
+  // constructor. The Notifier only knows about the IMessageSender interface!
+  Notifier(IMessageSender *service, const std::string &recipient)
+      : sender_(service), recipient_(recipient) {}
+
+  void send(const std::string &message) const {
+    // The high-level module uses the abstraction (interface).
+    sender_->sendMessage(recipient_, message);
+  }
+
+private:
+  // Stores a pointer to the generic interface
+  IMessageSender *sender_;
+  std::string recipient_;
+};
+```
 
 ## SOLID Only For OOP?
 
