@@ -72,6 +72,18 @@
 					many small Neovim plugins to help my day-to-day life as a developer.
 				</p>
 				<p class="mb-4 w-full text-gray-200 md:w-3/4">
+					Since early 2025 I have been employed as a <span class="text-blue-300"
+						>Full Stack Software Engineer</span
+					>
+					at Poppin' Jobs. Poppin' Jobs is a startup building a platform for young job-seekers with little
+					to no experience to find jobs. Through this opportunity I have learned how to build robust,
+					reliable web services using <span class="text-blue-300">C# and DOTNET</span>. I have also
+					been able to get hands on experience working on large scale front end web applications
+					written in React. I have also had a chance to work on load testing and data generation
+					using
+					<span class="text-blue-300">Grafana's K6</span>.
+				</p>
+				<p class="mb-4 w-full text-gray-200 md:w-3/4">
 					I have been employed as a Staff Accountant at
 					<span class="text-blue-300">Bottom Line Business Solutions (BLBS)</span> since 2020. In
 					2023, following a hack at the previous data hosting company, I was tasked with developing
