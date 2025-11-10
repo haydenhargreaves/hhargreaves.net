@@ -20,7 +20,7 @@ maintainable and extensible software. Adapting these principles into your own co
 [code smells](https://en.wikipedia.org/wiki/Code_smell), refactor code and develop Agile software.
 
 >
-> "If you think good architecture is expensive, try bad architecture." ~Uncle Bob
+> "If you think good architecture is expensive, try bad architecture." ~Robert "Uncle Bob" Martin
 >
 
 The five principles are as follows:
@@ -462,15 +462,112 @@ because the settings are being overridden, and each value is set individually fr
 expectation for a rectangle is that the height and width will be set independently!
 
 ## Interface Segregation Principle
-define the rule
-why it exists
-what is attempts to achieve
 
+The interface segregation principle states:
+
+> 
+> "A client should never be forced to implement an interface that it doesn’t use, or clients 
+> shouldn’t be forced to depend on methods they do not use." ~Robert "Uncle Bob" Martin
+>
+
+The goal of the interface segregation principle (ISP) is that large, general-purpose interfaces should
+be broken down into smaller, **more specific** interfaces. Doing so means that client classes only need 
+to be aware of the methods that are directly relevant to them.
+
+### Code Example
+
+Imagine a scenario where we have various types of printers, such as simple, multifunctional, and 
+others. We create a single, large interface, `IMachine`, that attempts to encompass all the functionality.
+This multi-use interface is what's known as a **[fat interface](https://dev.to/mcsee/code-smell-216-fat-interface-3jlp)**.
+
+```cpp
+// VIOLATION: A single, "fat" interface with methods not all clients need.
+class IMachine {
+public:
+    virtual void print(const std::string& document) const = 0;
+    virtual void scan(const std::string& document) const = 0;
+    virtual void fax(const std::string& document) const = 0;
+    virtual ~IMachine() = default;
+};
+
+// A SimplePrinter only needs to print, but it is forced to implement scan and fax.
+class SimplePrinter : public IMachine {
+public:
+    void print(const std::string& document) const override {
+        std::cout << "SimplePrinter: Printing " << document << ".\n";
+    }
+
+    // PROBLEM: SimplePrinter is forced to implement methods it doesn't use.
+    void scan(const std::string& document) const override {
+        // This implementation is a lie/waste, or throws an exception.
+        std::cerr << "SimplePrinter: ERROR! Cannot scan.\n";
+    }
+
+    void fax(const std::string& document) const override {
+        // This forces unnecessary dependencies and potential runtime errors.
+        std::cerr << "SimplePrinter: ERROR! Cannot fax.\n";
+    }
+};
+```
+
+The `SimplePrinter` is forced to implement the `scan` and `fax` methods, which are functions the printer
+does not have, therefore violating the LSP! However, a simple fix exists: **splitting the interface 
+into separate interfaces.**
+
+```cpp
+// 1. Segregated Interface: Printing capability
+class IPrinter {
+public:
+  virtual void print(const std::string &document) const = 0;
+  virtual ~IPrinter() = default;
+};
+
+// 2. Segregated Interface: Scanning capability
+class IScanner {
+public:
+  virtual void scan(const std::string &document) const = 0;
+  virtual ~IScanner() = default;
+};
+
+// 3. Segregated Interface: Fax capability
+class IFaxDevice {
+public:
+  virtual void fax(const std::string &document) const = 0;
+  virtual ~IFaxDevice() = default;
+};
+```
+
+Once the interfaces have been *thinned*, we can implement them again, but this time, in a way that 
+does not violate the ISP.
+
+```cpp
+// ADHERENCE: SimplePrinter now only implements the interface it needs.
+class SimplePrinterSRP : public IPrinter {
+public:
+  void print(const std::string &document) const override {
+    std::cout << "SimplePrinter: Printing " << document << ".\n";
+  }
+  // No more forced scan or fax methods! The client is clean.
+};
+
+// The MultiFunctionPrinter implements ALL the needed interfaces (composition)
+class MultiFunctionPrinter : public IPrinter,
+                             public IScanner,
+                             public IFaxDevice {
+public:
+  void print(const std::string &document) const override {
+    std::cout << "MFP: Printing " << document << ".\n";
+  }
+  void scan(const std::string &document) const override {
+    std::cout << "MFP: Scanning " << document << ".\n";
+  }
+  void fax(const std::string &document) const override {
+    std::cout << "MFP: Faxing " << document << ".\n";
+  }
+};
+```
 
 ## Dependency Inversion Principle
-define the rule
-why it exists
-what is attempts to achieve
 
 ## SOLID Only For OOP?
 
