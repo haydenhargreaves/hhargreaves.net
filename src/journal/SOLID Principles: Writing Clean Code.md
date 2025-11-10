@@ -1,6 +1,6 @@
 Date: 2025-11-??
-Desc: SOLID principles are very well known, but are they really that important?
-# SOLID Principles: Do They Matter
+Desc: SOLID principles help developers write better code, but how?
+# SOLID Principles: Writing "Clean Code"
 
 <img src="/journal/SOLID.png" alt="Solid principles guide" style="background-color: white; border-radius: 15px; margin-inline: 10px; margin-top: 2.5%; margin-bottom: 1.5%; width: 95%; max-width: 500px;">
 
@@ -400,10 +400,66 @@ adheres to the open/closed principle is easy to scale, expand and upgrade.
 
 
 ## Liskov Substitution Principle
-define the rule
-why it exists
-what is attempts to achieve
 
+The Liskov Substitution Principle states:
+
+>
+> "Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for 
+> objects y of type S where S is a subtype of T." ~Barbara Liskov
+>
+
+This means that every subclass (derived class) should be substitutable for their base (parent) class.
+
+The Liskov Substitution Principle (LSP) is a subtyping definition known as **[strong behavioral 
+subtyping](https://en.wikipedia.org/wiki/Behavioral_subtyping).** Meaning, a class that a derived 
+class has replaced should continue to function as expected, therefore defining a semantic relation, 
+not just a syntactic relation.
+
+### Code Example
+
+This principle can be challenging to understand; for simplicity's sake, we will examine only a 
+violation of the principle—the *well-known* **Rectangle/Square Problem**.
+
+```cpp
+class Rectangle {
+public:
+  Rectangle(int w, int h) : width(w), height(h) {}
+
+  virtual void setWidth(int w) { this->width = w; }
+  virtual void setHeight(int h) { this->height = h; }
+
+  int getArea() const { return this->width * this->height; }
+
+protected:
+  int width;
+  int height;
+};
+
+// Subclass that violates LSP
+class Square : public Rectangle {
+public:
+  Square(int size) : Rectangle(size, size) {}
+
+  // LSP VIOLATION: Square alters the expected behavior of setters.
+  // Setting width MUST also set height, breaking the client's expectation
+  // that width and height can be set independently.
+  void setWidth(int w) override {
+    this->width = w;
+    this->height = w; // Mutates height
+  }
+In the context of mathematics, a square is a rectangle. However, in the context of programming, forcing a square to inherit from a rectangle typically violates the LSP. This violation occurs because the settings are being overridden, and each value is set individually from each method. The expectation for a rectangle is that the height and width will be set independently!
+
+  void setHeight(int h) override {
+    this->height = h;
+    this->width = h; // Mutates width
+  }
+};
+```
+
+In the context of *mathematics*, a **square is a rectangle**. However, in the context of programming,
+forcing a square to inherit from a rectangle typically violates the LSP. This violation occurs 
+because the settings are being overridden, and each value is set individually from each method. The 
+expectation for a rectangle is that the height and width will be set independently!
 
 ## Interface Segregation Principle
 define the rule
