@@ -1,19 +1,43 @@
 [
   {
-    "title": "TCP Server Notification System",
-    "description": "Server/Client TCP notification system for communication between a server and many clients. A custom event loop and protocol was created to handle the communication between the server and clients.",
-    "date": "February, 2025 - Current",
+    "title": "Markdown to HTML Transpiler",
+    "description": "A C++ tool that converts Markdown files into clean HTML. It uses a recursive descent parser to recognize headings, lists, and formatting, then outputs valid HTML for easy web publishing or automation. The code is modular, modern, and designed to be both reliable and easy to extend. I have plans to migrate this project to a different tech stack in the near future.",
+    "date": "September, 2025 - Current",
     "stack": [
-      "Go"
+      "C++"
     ],
     "image": null,
     "imageAlt": null,
-    "link": "https://github.com/haydenhargreaves/TCPNotificationManager"
+    "link": "https://git.gophernest.net/azpect/MarkdownToHtmlTranspiler"
+  },
+  {
+    "title": "Potion - Web App",
+    "description": "A web-based recipe sharing platform allows users to discover, submit, and share recipes with a community online. This application is built using Go for the backend, leveraging its high performance and concurrency capabilities to efficiently serve many users at once.",
+    "date": "July, 2025 - Current",
+    "stack": [
+      "Go",
+      "Typescript",
+      "React"
+    ],
+    "image": "projects/potion.png",
+    "imageAlt": "Image of Potion, the web app.",
+    "link": "https://git.gophernest.net/azpect/Potion"
+  },
+  {
+    "title": "File Server Manager - Web App",
+    "description": "Simple web UI for accessing a server's file system. The UI allows for creation, removal and moving of files and directories. This project was used as a way to refresh my memory on React before interviewing for a role.",
+    "date": "February, 2025 - May, 2025",
+    "stack": [
+      "React"
+    ],
+    "image": "projects/fileManager.png",
+    "imageAlt": "Image of the file manager, the web app.",
+    "link": "https://git.gophernest.net/azpect/ServerFileManager"
   },
   {
     "title": "Python Stock Market Analysis",
     "description": "A simple stock market analysis tool that uses a backdoor API to get stock data and analyze it, collecting basic information of historical data. This project was built as a homework assignment for my SE320 (Software Construction) class.",
-    "date": "February, 2025",
+    "date": "February, 2025 - March, 2025",
     "stack": [
       "Python"
     ],
@@ -24,7 +48,7 @@
   {
     "title": "Acoustic Drone Detection Sensor Network",
     "description": "This project aims to develop a low-cost, acoustic drone detection system as a supplementary security measure for locations like borders and airports. The system will use small microphones and microcontrollers to detect drone sounds, even amidst background noise, at distances of at least 50 feet. This data will be collected by a network of weather-resistant, solar-powered sensors, transmitted wirelessly via LoRa and WiFi, and securely reported in real-time to Amazon Web Services for monitoring. This project is a research project funded by Embry-Riddle Aeronautical University and the Undergraute Research Institute (URI).",
-    "date": "December, 2024 - Current",
+    "date": "December, 2024 - August, 2025",
     "stack": [
       "C++",
       "Python"

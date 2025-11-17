@@ -19,6 +19,7 @@
           packages = with pkgs; [
             # Add packages here...
             bun
+            nodejs
           ];
 
           # Define the shell that will be executed.
