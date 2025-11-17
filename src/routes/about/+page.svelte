@@ -187,7 +187,7 @@
 			<div class="my-4">
 				<h3 class="text-sm font-semibold text-gray-200">Gitea</h3>
 				<a href="https://git.gophernest.net/azpect" target="_blank"
-					><p class="py text-xs text-gray-200">git.gophernest</p></a
+					><p class="py text-xs text-gray-200">git.gophernest.net</p></a
 				>
 			</div>
 		</div>
